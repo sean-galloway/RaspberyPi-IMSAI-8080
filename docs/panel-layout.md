@@ -4,8 +4,11 @@ See `panel-layout.svg` for the drawing. This documents the dimensions behind it.
 
 ## Width budget
 
-A 10" rack aperture gives roughly **220 mm** of usable panel width. The binding
-constraint is toggle finger-clearance, not the electronics — the LEDs are trivial.
+A 10" 1U rack aperture measures **214 mm** wide × 33 mm high (verified against an
+actual 10" 12-port keystone patch panel: 254 mm overall, 238 mm mount-hole span,
+214 mm aperture). Width is set by toggle finger-clearance, not the electronics —
+the LEDs are trivial. **Height forces 2U:** the lamps-over-toggles stack needs the
+~77 mm usable aperture of a 2U face; it does not fit 1U's 33 mm.
 
 ## Blocks
 
@@ -25,7 +28,7 @@ Right block (4 columns):
 | 1   | 4 — status       | 3 mm LED |
 | —   | 4 — command      | momentary toggle |
 
-## Pitch math (fits 220 mm)
+## Pitch math (fits 214 mm × 2U)
 
 Columns must align vertically (LEDs sit above toggles), so toggle pitch governs
 each block's column spacing.
@@ -34,10 +37,11 @@ each block's column spacing.
   MTS mini-toggle bodies clear at this pitch)
 - left block, 8 columns: 7 x 15 mm = **105 mm** span
 - right block, 4 columns: 3 x 15 mm = **45 mm** span
-- remaining for center gap + two side margins: 220 - 105 - 45 = **70 mm**
+- remaining for center gap + two side margins: 214 - 105 - 45 = **64 mm**
 
-Comfortable fit. LED rows use ~8 mm vertical pitch; three rows plus a toggle row
-makes this a ~2U face in a 10" rack (not 1U).
+Comfortable fit horizontally. Vertically, the LED rows use **12 mm** pitch (centers
+at y = 10 / 22 / 34), so the three-row lamp field is ~30 mm; adding the toggle row
+below plus a branding strip is why this is a **2U** face (~77 mm usable), not 1U.
 
 ## Mechanical: the standoff stack
 

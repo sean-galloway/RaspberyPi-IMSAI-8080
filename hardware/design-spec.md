@@ -6,12 +6,25 @@ come out of the layout step described here.
 
 ## Board
 
-- Outline: ~220 mm × 55 mm (wide strip covering the LED field only; switches are off-board on the bezel below). Sits
-  behind the bezel, component side facing the bezel.
+- Panel format: **3U 10" rack face** (133.4 mm tall, ~122 mm usable aperture) × **214 mm
+  usable aperture width**. 3U (not 2U) is required for mechanical clearance: the board is
+  70 mm tall, and the bezel toggles are panel-mounted with ~13 mm-deep bodies that stick
+  back toward the PCB. On a 2U face there is only ~7 mm below the board for the toggles —
+  their bodies would drive into the lower board (standoff gap is just 3-5 mm). 3U gives
+  the board the top band (LEDs + electronics) and leaves ~55 mm below for the toggles on
+  their own bracket, wired back via J3/J4. (Trade-off: a 3U face reads squarer than the
+  IMSAI's wide 2.5:1 — a fully faithful build wants a 19" 4U panel; see the project TODO.)
+- Outline: ~214 mm × 55 mm PCB (LED field + control electronics: the 28 LEDs occupy the top
+  ~30 mm, the ICs/connectors fill the rest). The board can extend up to ~238 mm wide (the
+  rack mount-hole span) if edge parts need the room. Switches are off-board on the 2U bezel.
+  Sits behind the bezel, component side facing the bezel.
 - Stackup: 2-layer FR-4, 1.6 mm, HASL (ENIG optional for the HTSSOP pads).
 - Mounting: 6× M2.5 to short bezel standoffs (see "Mounting holes" below).
-- Assembly: single-sided SMT (everything on the component/front side) to hold
-  cost — toggles are off-board (wired), so nothing needs the back side.
+- Assembly: two-sided SMT. Front (component/bezel side) carries the LEDs, ICs, and
+  connectors; the 40 decoupling caps / resistors sit on the **back** directly under
+  their ICs (ideal decoupling, GND pads land straight in the back ground plane, and
+  the dense front layout de-clutters). Toggles remain off-board (wired). The small
+  JLCPCB two-sided-assembly adder buys a far cleaner, routable board.
 
 ## Mounting holes
 
@@ -24,10 +37,14 @@ top-left datum (same datum as the LED grid), chosen to sit in LED-free zones:
 |-----|------|-----|--------------------------|
 | H1  | 7    | 7   | top-left corner margin   |
 | H2  | 140  | 7   | top, inter-block gap     |
-| H3  | 213  | 7   | top-right corner margin  |
+| H3  | 207  | 7   | top-right corner margin  |
 | H4  | 7    | 48  | bottom-left corner       |
 | H5  | 140  | 48  | bottom, inter-block gap  |
-| H6  | 213  | 48  | bottom-right corner      |
+| H6  | 207  | 48  | bottom-right corner      |
+
+(H3/H6 are at x=207 — 7 mm from the 214 mm right edge, mirroring the left margin.
+Placed by `place_holes.py`, which offsets from the board outline so it is immune
+to where the board sits on the sheet.)
 
 The two mid-span holes (H2/H5) live in the 40 mm gap between the left LED block
 (ends x=120) and the status block (starts x=160) — that keeps a 220 mm strip

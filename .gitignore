@@ -216,3 +216,15 @@ __marimo__/
 
 # Streamlit
 .streamlit/secrets.toml
+
+# KiCad / SKiDL working files (rev1 layout)
+*.kicad_prl
+*.bak
+*.bak[0-9]
+*.bak_*
+*.erc
+*_sklib.py
+*.ses
+*.dsn
+hardware/fab/
+.history/
