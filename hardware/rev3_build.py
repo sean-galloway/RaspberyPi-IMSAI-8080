@@ -10,7 +10,7 @@ Run:  /usr/bin/python3 rev3_build.py
 """
 import pcbnew
 
-SRC, DST = "imspi8080_rev2.kicad_pcb", "imspi8080_rev3.kicad_pcb"
+SRC, DST = "OLD/imspi8080_rev2.kicad_pcb", "imspi8080_rev3.kicad_pcb"   # rev2 archived in OLD/
 BW, BH = 204.0, 95.0
 PHLIB = "/usr/share/kicad/footprints/Connector_PinHeader_2.54mm.pretty"
 
