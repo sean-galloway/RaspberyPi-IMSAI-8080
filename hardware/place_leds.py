@@ -10,12 +10,15 @@ the grid up with your board datum / bezel holes.
 """
 import pcbnew
 
-# --- grid definition (mm) --------------------------------------------------
-GRID_X0   = 15.0   # x of the leftmost left-block column
-GRID_Y0   = 10.0   # y of the top LED row
+# --- grid definition (mm) — 204 x 60 rev2 board ----------------------------
+# Trimmed from rev1 (15 / 10 / 160): pulled the left block right and the status
+# block left to open the ~10 mm structural side channels, and shifted the field
+# up 4 mm to leave the electronics band below on the 60 mm-tall board.
+GRID_X0   = 14.0   # x of the leftmost left-block column (was 15; 14 clears the H1 keepout)
+GRID_Y0   = 6.0    # y of the top LED row (was 10 — shifted up for the 60 mm board)
 COL_PITCH = 15.0   # column spacing == switch pitch (LEDs sit over the toggles)
 ROW_PITCH = 12.0   # row spacing
-RIGHT_X0  = 160.0  # x of the first right-block (status) column
+RIGHT_X0  = 147.0  # x of the first right-block (status) column (was 160)
 STATUS_Y  = GRID_Y0 + ROW_PITCH   # status row aligned to the middle row
 
 # Reference-designator -> grid mapping (matches the TLC5947 channel map):

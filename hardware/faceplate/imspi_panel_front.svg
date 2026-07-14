@@ -1,0 +1,138 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="254.0mm" height="132.0mm" viewBox="0 0 254.0 132.0">
+  <defs>
+      <linearGradient id="face" x1="0" y1="0" x2="0" y2="1">
+        <stop offset="0" stop-color="#20232b"/><stop offset="1" stop-color="#161821"/>
+      </linearGradient>
+      <radialGradient id="knob" cx="0.35" cy="0.30" r="0.75">
+        <stop offset="0" stop-color="#e9edf3"/><stop offset="1" stop-color="#8b93a3"/>
+      </radialGradient>
+      <filter id="glow" x="-60%" y="-60%" width="220%" height="220%">
+        <feGaussianBlur stdDeviation="0.7" result="b"/>
+        <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+      </filter>
+    </defs>
+  <rect x="0" y="0" width="254.0" height="132.0" rx="4" fill="url(#face)" stroke="#3a3f4d" stroke-width="0.6"/>
+  <rect x="3" y="3" width="248.0" height="126.0" rx="3" fill="none" stroke="#3a3f4d" stroke-width="0.3" opacity="0.6"/>
+  <rect x="0" y="0" width="6.0" height="132.0" fill="#2f7fe6"/>
+  <rect x="248.0" y="0" width="6.0" height="132.0" fill="#2f7fe6"/>
+  <rect x="6.0" y="0" width="242.0" height="11.0" fill="#2f7fe6"/>
+  <rect x="6.0" y="11.0" width="242.0" height="0.7" fill="#1d55a6"/>
+  <rect x="5.3" y="11.0" width="0.7" height="121.0" fill="#1d55a6"/>
+  <rect x="248.0" y="11.0" width="0.7" height="121.0" fill="#1d55a6"/>
+  <circle cx="8" cy="5.5" r="6" fill="#161821"/>
+  <rect x="3.33" y="2.12" width="9.33" height="6.77" rx="3.38" fill="#0b0c10" stroke="#3a3f4d" stroke-width="0.3"/>
+  <circle cx="8" cy="126.5" r="6" fill="#161821"/>
+  <rect x="3.33" y="123.11" width="9.33" height="6.77" rx="3.38" fill="#0b0c10" stroke="#3a3f4d" stroke-width="0.3"/>
+  <circle cx="246.0" cy="5.5" r="6" fill="#161821"/>
+  <rect x="241.34" y="2.12" width="9.33" height="6.77" rx="3.38" fill="#0b0c10" stroke="#3a3f4d" stroke-width="0.3"/>
+  <circle cx="246.0" cy="126.5" r="6" fill="#161821"/>
+  <rect x="241.34" y="123.11" width="9.33" height="6.77" rx="3.38" fill="#0b0c10" stroke="#3a3f4d" stroke-width="0.3"/>
+  <rect x="26.00" y="41.00" width="115.00" height="6" rx="1.4" fill="#0b0c10" stroke="#ffb02e" stroke-width="0.25" opacity="0.98"/>
+  <rect x="26.00" y="53.00" width="115.00" height="6" rx="1.4" fill="#0b0c10" stroke="#ffb02e" stroke-width="0.25" opacity="0.98"/>
+  <rect x="26.00" y="65.00" width="115.00" height="6" rx="1.4" fill="#0b0c10" stroke="#ffb02e" stroke-width="0.25" opacity="0.98"/>
+  <rect x="159.00" y="53.00" width="55.00" height="6" rx="1.4" fill="#0b0c10" stroke="#ffb02e" stroke-width="0.25" opacity="0.98"/>
+  <circle cx="31.00" cy="44.00" r="1.5" fill="#ff4d3d" filter="url(#glow)"/>
+  <circle cx="31.00" cy="56.00" r="1.5" fill="#ff4d3d" filter="url(#glow)"/>
+  <circle cx="31.00" cy="68.00" r="1.5" fill="#ff4d3d" filter="url(#glow)"/>
+  <circle cx="46.00" cy="44.00" r="1.5" fill="#ff4d3d" filter="url(#glow)"/>
+  <circle cx="46.00" cy="56.00" r="1.5" fill="#ff4d3d" filter="url(#glow)"/>
+  <circle cx="46.00" cy="68.00" r="1.5" fill="#ff4d3d" filter="url(#glow)"/>
+  <circle cx="61.00" cy="44.00" r="1.5" fill="#ff4d3d" filter="url(#glow)"/>
+  <circle cx="61.00" cy="56.00" r="1.5" fill="#ff4d3d" filter="url(#glow)"/>
+  <circle cx="61.00" cy="68.00" r="1.5" fill="#ff4d3d" filter="url(#glow)"/>
+  <circle cx="76.00" cy="44.00" r="1.5" fill="#ff4d3d" filter="url(#glow)"/>
+  <circle cx="76.00" cy="56.00" r="1.5" fill="#ff4d3d" filter="url(#glow)"/>
+  <circle cx="76.00" cy="68.00" r="1.5" fill="#3a2422"/>
+  <circle cx="91.00" cy="44.00" r="1.5" fill="#ff4d3d" filter="url(#glow)"/>
+  <circle cx="91.00" cy="56.00" r="1.5" fill="#ff4d3d" filter="url(#glow)"/>
+  <circle cx="91.00" cy="68.00" r="1.5" fill="#3a2422"/>
+  <circle cx="106.00" cy="44.00" r="1.5" fill="#ff4d3d" filter="url(#glow)"/>
+  <circle cx="106.00" cy="56.00" r="1.5" fill="#3a2422"/>
+  <circle cx="106.00" cy="68.00" r="1.5" fill="#3a2422"/>
+  <circle cx="121.00" cy="44.00" r="1.5" fill="#ff4d3d" filter="url(#glow)"/>
+  <circle cx="121.00" cy="56.00" r="1.5" fill="#3a2422"/>
+  <circle cx="121.00" cy="68.00" r="1.5" fill="#3a2422"/>
+  <circle cx="136.00" cy="44.00" r="1.5" fill="#ff4d3d" filter="url(#glow)"/>
+  <circle cx="136.00" cy="56.00" r="1.5" fill="#3a2422"/>
+  <circle cx="136.00" cy="68.00" r="1.5" fill="#3a2422"/>
+  <circle cx="164.00" cy="56.00" r="1.5" fill="#ff4d3d" filter="url(#glow)"/>
+  <circle cx="179.00" cy="56.00" r="1.5" fill="#ff4d3d" filter="url(#glow)"/>
+  <circle cx="194.00" cy="56.00" r="1.5" fill="#ff4d3d" filter="url(#glow)"/>
+  <circle cx="209.00" cy="56.00" r="1.5" fill="#ff4d3d" filter="url(#glow)"/>
+  <text x="31.00" y="39.00" font-size="2.5" fill="#9aa0ad" text-anchor="middle" font-weight="normal" letter-spacing="0" opacity="1" font-family="DejaVu Sans Mono, monospace">JET</text>
+  <text x="46.00" y="39.00" font-size="2.5" fill="#9aa0ad" text-anchor="middle" font-weight="normal" letter-spacing="0" opacity="1" font-family="DejaVu Sans Mono, monospace">PI5</text>
+  <text x="61.00" y="39.00" font-size="2.5" fill="#9aa0ad" text-anchor="middle" font-weight="normal" letter-spacing="0" opacity="1" font-family="DejaVu Sans Mono, monospace">PICO</text>
+  <text x="76.00" y="39.00" font-size="2.5" fill="#9aa0ad" text-anchor="middle" font-weight="normal" letter-spacing="0" opacity="1" font-family="DejaVu Sans Mono, monospace">ZED</text>
+  <text x="91.00" y="39.00" font-size="2.5" fill="#9aa0ad" text-anchor="middle" font-weight="normal" letter-spacing="0" opacity="1" font-family="DejaVu Sans Mono, monospace">LIDAR</text>
+  <text x="106.00" y="39.00" font-size="2.5" fill="#9aa0ad" text-anchor="middle" font-weight="normal" letter-spacing="0" opacity="1" font-family="DejaVu Sans Mono, monospace">NET</text>
+  <text x="121.00" y="39.00" font-size="2.5" fill="#9aa0ad" text-anchor="middle" font-weight="normal" letter-spacing="0" opacity="1" font-family="DejaVu Sans Mono, monospace">48V</text>
+  <text x="136.00" y="39.00" font-size="2.5" fill="#9aa0ad" text-anchor="middle" font-weight="normal" letter-spacing="0" opacity="1" font-family="DejaVu Sans Mono, monospace">12V</text>
+  <text x="186.50" y="50.40" font-size="2.4" fill="#ffb02e" text-anchor="middle" font-weight="normal" letter-spacing="0.4" opacity="1" font-family="DejaVu Sans Mono, monospace">— STATUS —</text>
+  <text x="164.00" y="63.00" font-size="2.3" fill="#e6e8ee" text-anchor="middle" font-weight="normal" letter-spacing="0" opacity="1" font-family="DejaVu Sans Mono, monospace">ARMED</text>
+  <text x="179.00" y="63.00" font-size="2.3" fill="#e6e8ee" text-anchor="middle" font-weight="normal" letter-spacing="0" opacity="1" font-family="DejaVu Sans Mono, monospace">TRACK</text>
+  <text x="194.00" y="63.00" font-size="2.3" fill="#e6e8ee" text-anchor="middle" font-weight="normal" letter-spacing="0" opacity="1" font-family="DejaVu Sans Mono, monospace">FAULT</text>
+  <text x="209.00" y="63.00" font-size="2.3" fill="#e6e8ee" text-anchor="middle" font-weight="normal" letter-spacing="0" opacity="1" font-family="DejaVu Sans Mono, monospace">PWR</text>
+  <text x="150.00" y="44.90" font-size="2.4" fill="#ffb02e" text-anchor="middle" font-weight="bold" letter-spacing="0" opacity="1" font-family="DejaVu Sans Mono, monospace">NODES</text>
+  <text x="150.00" y="56.90" font-size="2.4" fill="#ffb02e" text-anchor="middle" font-weight="bold" letter-spacing="0" opacity="1" font-family="DejaVu Sans Mono, monospace">PAN</text>
+  <text x="150.00" y="68.90" font-size="2.4" fill="#ffb02e" text-anchor="middle" font-weight="bold" letter-spacing="0" opacity="1" font-family="DejaVu Sans Mono, monospace">TILT</text>
+  <text x="83.50" y="99.50" font-size="2.3" fill="#ffb02e" text-anchor="middle" font-weight="normal" letter-spacing="0.3" opacity="1" font-family="DejaVu Sans Mono, monospace">— MODE / CONFIG (latching) —</text>
+  <text x="186.50" y="99.50" font-size="2.3" fill="#ffb02e" text-anchor="middle" font-weight="normal" letter-spacing="0.3" opacity="1" font-family="DejaVu Sans Mono, monospace">— COMMAND —</text>
+  <circle cx="31.00" cy="108.00" r="3.4" fill="#0e0f13" stroke="#3a3f4d" stroke-width="0.3"/>
+  <rect x="28.50" y="101.50" width="5.0" height="8.5" rx="1.6" fill="#2f6fe0" stroke="#00000055" stroke-width="0.3"/>
+  <rect x="29.20" y="102.10" width="2.40" height="5.50" rx="1" fill="#ffffff26"/>
+  <text x="31.00" y="116.60" font-size="2.3" fill="#e6e8ee" text-anchor="middle" font-weight="normal" letter-spacing="0" opacity="1" font-family="DejaVu Sans Mono, monospace">MODE</text>
+  <circle cx="46.00" cy="108.00" r="3.4" fill="#0e0f13" stroke="#3a3f4d" stroke-width="0.3"/>
+  <rect x="43.50" y="101.50" width="5.0" height="8.5" rx="1.6" fill="#2f6fe0" stroke="#00000055" stroke-width="0.3"/>
+  <rect x="44.20" y="102.10" width="2.40" height="5.50" rx="1" fill="#ffffff26"/>
+  <text x="46.00" y="116.60" font-size="2.3" fill="#e6e8ee" text-anchor="middle" font-weight="normal" letter-spacing="0" opacity="1" font-family="DejaVu Sans Mono, monospace">TRACK</text>
+  <circle cx="61.00" cy="108.00" r="3.4" fill="#0e0f13" stroke="#3a3f4d" stroke-width="0.3"/>
+  <rect x="58.50" y="101.50" width="5.0" height="8.5" rx="1.6" fill="#2f6fe0" stroke="#00000055" stroke-width="0.3"/>
+  <rect x="59.20" y="102.10" width="2.40" height="5.50" rx="1" fill="#ffffff26"/>
+  <text x="61.00" y="116.60" font-size="2.3" fill="#e6e8ee" text-anchor="middle" font-weight="normal" letter-spacing="0" opacity="1" font-family="DejaVu Sans Mono, monospace">LASER</text>
+  <circle cx="76.00" cy="108.00" r="3.4" fill="#0e0f13" stroke="#3a3f4d" stroke-width="0.3"/>
+  <rect x="73.50" y="101.50" width="5.0" height="8.5" rx="1.6" fill="#2f6fe0" stroke="#00000055" stroke-width="0.3"/>
+  <rect x="74.20" y="102.10" width="2.40" height="5.50" rx="1" fill="#ffffff26"/>
+  <text x="76.00" y="116.60" font-size="2.3" fill="#e6e8ee" text-anchor="middle" font-weight="normal" letter-spacing="0" opacity="1" font-family="DejaVu Sans Mono, monospace">NIGHT</text>
+  <circle cx="91.00" cy="108.00" r="3.4" fill="#0e0f13" stroke="#3a3f4d" stroke-width="0.3"/>
+  <rect x="88.50" y="101.50" width="5.0" height="8.5" rx="1.6" fill="#2f6fe0" stroke="#00000055" stroke-width="0.3"/>
+  <rect x="89.20" y="102.10" width="2.40" height="5.50" rx="1" fill="#ffffff26"/>
+  <text x="91.00" y="116.60" font-size="2.3" fill="#e6e8ee" text-anchor="middle" font-weight="normal" letter-spacing="0" opacity="1" font-family="DejaVu Sans Mono, monospace">REC</text>
+  <circle cx="106.00" cy="108.00" r="3.4" fill="#0e0f13" stroke="#3a3f4d" stroke-width="0.3"/>
+  <rect x="103.50" y="101.50" width="5.0" height="8.5" rx="1.6" fill="#2f6fe0" stroke="#00000055" stroke-width="0.3"/>
+  <rect x="104.20" y="102.10" width="2.40" height="5.50" rx="1" fill="#ffffff26"/>
+  <text x="106.00" y="116.60" font-size="2.3" fill="#e6e8ee" text-anchor="middle" font-weight="normal" letter-spacing="0" opacity="1" font-family="DejaVu Sans Mono, monospace">VERB</text>
+  <circle cx="121.00" cy="108.00" r="3.4" fill="#0e0f13" stroke="#3a3f4d" stroke-width="0.3"/>
+  <rect x="118.50" y="101.50" width="5.0" height="8.5" rx="1.6" fill="#454b57" stroke="#00000055" stroke-width="0.3"/>
+  <rect x="119.20" y="102.10" width="2.40" height="5.50" rx="1" fill="#ffffff26"/>
+  <text x="121.00" y="116.60" font-size="2.3" fill="#9aa0ad" text-anchor="middle" font-weight="normal" letter-spacing="0" opacity="1" font-family="DejaVu Sans Mono, monospace">–</text>
+  <circle cx="136.00" cy="108.00" r="3.4" fill="#0e0f13" stroke="#3a3f4d" stroke-width="0.3"/>
+  <rect x="133.50" y="101.50" width="5.0" height="8.5" rx="1.6" fill="#454b57" stroke="#00000055" stroke-width="0.3"/>
+  <rect x="134.20" y="102.10" width="2.40" height="5.50" rx="1" fill="#ffffff26"/>
+  <text x="136.00" y="116.60" font-size="2.3" fill="#9aa0ad" text-anchor="middle" font-weight="normal" letter-spacing="0" opacity="1" font-family="DejaVu Sans Mono, monospace">–</text>
+  <circle cx="164.00" cy="108.00" r="3.4" fill="#0e0f13" stroke="#3a3f4d" stroke-width="0.3"/>
+  <rect x="161.50" y="101.50" width="5.0" height="8.5" rx="1.6" fill="#e23a2e" stroke="#00000055" stroke-width="0.3"/>
+  <rect x="162.20" y="102.10" width="2.40" height="5.50" rx="1" fill="#ffffff26"/>
+  <circle cx="164.00" cy="109.60" r="0.9" fill="#00000066"/>
+  <text x="164.00" y="116.60" font-size="2.3" fill="#e6e8ee" text-anchor="middle" font-weight="normal" letter-spacing="0" opacity="1" font-family="DejaVu Sans Mono, monospace">TEST</text>
+  <circle cx="179.00" cy="108.00" r="3.4" fill="#0e0f13" stroke="#3a3f4d" stroke-width="0.3"/>
+  <rect x="176.50" y="101.50" width="5.0" height="8.5" rx="1.6" fill="#e23a2e" stroke="#00000055" stroke-width="0.3"/>
+  <rect x="177.20" y="102.10" width="2.40" height="5.50" rx="1" fill="#ffffff26"/>
+  <circle cx="179.00" cy="109.60" r="0.9" fill="#00000066"/>
+  <text x="179.00" y="116.60" font-size="2.3" fill="#e6e8ee" text-anchor="middle" font-weight="normal" letter-spacing="0" opacity="1" font-family="DejaVu Sans Mono, monospace">PAGE</text>
+  <circle cx="194.00" cy="108.00" r="3.4" fill="#0e0f13" stroke="#3a3f4d" stroke-width="0.3"/>
+  <rect x="191.50" y="101.50" width="5.0" height="8.5" rx="1.6" fill="#e23a2e" stroke="#00000055" stroke-width="0.3"/>
+  <rect x="192.20" y="102.10" width="2.40" height="5.50" rx="1" fill="#ffffff26"/>
+  <circle cx="194.00" cy="109.60" r="0.9" fill="#00000066"/>
+  <text x="194.00" y="116.60" font-size="2.3" fill="#e6e8ee" text-anchor="middle" font-weight="normal" letter-spacing="0" opacity="1" font-family="DejaVu Sans Mono, monospace">HOME</text>
+  <circle cx="209.00" cy="108.00" r="3.4" fill="#0e0f13" stroke="#3a3f4d" stroke-width="0.3"/>
+  <rect x="206.50" y="101.50" width="5.0" height="8.5" rx="1.6" fill="#e23a2e" stroke="#00000055" stroke-width="0.3"/>
+  <rect x="207.20" y="102.10" width="2.40" height="5.50" rx="1" fill="#ffffff26"/>
+  <circle cx="209.00" cy="109.60" r="0.9" fill="#00000066"/>
+  <text x="209.00" y="116.60" font-size="2.3" fill="#e6e8ee" text-anchor="middle" font-weight="bold" letter-spacing="0" opacity="1" font-family="DejaVu Sans Mono, monospace">ARM</text>
+  <text x="209.00" y="119.80" font-size="1.7" fill="#9aa0ad" text-anchor="middle" font-weight="normal" letter-spacing="0" opacity="1" font-family="DejaVu Sans Mono, monospace">soft · hw switch arms</text>
+  <text x="14.00" y="22.00" font-size="3.6" fill="#e6e8ee" text-anchor="start" font-weight="bold" letter-spacing="0.5" opacity="1" font-family="DejaVu Sans Mono, monospace">PAINTBALL SENTRY</text>
+  <text x="14.00" y="27.50" font-size="2.3" fill="#9aa0ad" text-anchor="start" font-weight="normal" letter-spacing="0" opacity="1" font-family="DejaVu Sans Mono, monospace">GROUND STATION · autonomous marker turret</text>
+  <text x="240.00" y="24.00" font-size="6.0" fill="#ffb02e" text-anchor="end" font-weight="bold" letter-spacing="0.5" opacity="1" font-family="DejaVu Sans Mono, monospace">IMSPI 8080</text>
+  <line x1="190.0" y1="26.3" x2="240.0" y2="26.3" stroke="#ffb02e" stroke-width="0.6"/>
+  <text x="240.00" y="31.00" font-size="2.6" fill="#9aa0ad" text-anchor="end" font-weight="normal" letter-spacing="0.6" opacity="1" font-family="DejaVu Sans Mono, monospace">SPX LABS · HMI</text>
+</svg>

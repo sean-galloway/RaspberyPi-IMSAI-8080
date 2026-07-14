@@ -17,16 +17,16 @@ import pcbnew
 FP_LIB  = "/usr/share/kicad/footprints/MountingHole.pretty"
 FP_NAME = "MountingHole_2.7mm_M2.5"        # 2.7 mm isolated NPTH for M2.5
 
-# (ref, x, y) in mm from the board's top-left datum, for the 214 x 55 board.
-# H3/H6 pulled in to x=207 (7 mm from the 214 mm right edge; was 213 on the old
-# 220 mm board). H2/H5 sit in the 120..160 inter-block gap.
+# (ref, x, y) in mm from the board's top-left datum, for the 204 x 60 rev2 board.
+# Outer columns x=8/196 sit on the structural side channels (the carrier-plate
+# front L-gusset lines); mid holes H2/H5 in the 117..147 inter-block gap.
 HOLES = [
-    ("H1",   7,  7),
-    ("H2", 140,  7),
-    ("H3", 207,  7),
-    ("H4",   7, 48),
-    ("H5", 140, 48),
-    ("H6", 207, 48),
+    ("H1",   8,  7),
+    ("H2", 131,  7),
+    ("H3", 196,  7),
+    ("H4",   8, 53),
+    ("H5", 131, 53),
+    ("H6", 196, 53),
 ]
 
 board = pcbnew.GetBoard()

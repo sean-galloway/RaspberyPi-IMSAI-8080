@@ -24,6 +24,13 @@ Open items for the IMSPI 8080 project.
       placement/routing scripts, and firmware at the larger size.
 
 ### Rev1 notes to carry into rev2
+- **Trim board to 204 × 60 mm (−10 mm each axis) — structural, not cosmetic.** The carrier-
+  plate side flanges, front L-gussets, and rail-mount hardware all run down the side margins;
+  the current full-width 214 mm PCB (mounting holes only 7 mm from each edge) leaves no room
+  for them. Pulling the board in ~5 mm/side opens the clearance channels the rigidity scheme
+  needs; trimming height frees the band below the LEDs for the front flange + toggle bracket.
+  This is a **re-layout, not an outline crop**: the LED grid (currently x = 15–205 mm) must
+  pull inward and the edge holes/connectors move with it. See the carrier-plate rigidity plan.
 - Fine-pitch parts need **0.15 mm track / 0.13 mm clearance** rules (0.25/0.2 couldn't
   escape the RP2040 QFN-56 0.4 mm pitch).
 - Ground is routed as **traces** (no solid plane on this dense 2-layer board).
