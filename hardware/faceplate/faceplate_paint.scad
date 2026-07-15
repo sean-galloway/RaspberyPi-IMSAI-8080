@@ -1,6 +1,6 @@
 $fn=48; FACE_W=254.0; FACE_H=132.0; TH=4.0; RECESS=0.7; eps=0.05;
 STANDOFF=3.5; BOSS_OD=5.5; SCREW_PILOT=2.1; FRONT_WALL=1.0;
-mounts=[[33.00,118.00],[156.00,118.00],[221.00,118.00],[33.00,39.00],[156.00,39.00],[221.00,39.00]];
+mounts=[[33.00,114.00],[156.00,114.00],[221.00,114.00],[33.00,35.00],[156.00,35.00],[221.00,35.00]];
 module bosses(){ for(m=mounts) translate([m[0],m[1],-STANDOFF]) cylinder(h=STANDOFF+eps,d=BOSS_OD); }
 module screw_blind(){ for(m=mounts) translate([m[0],m[1],-STANDOFF-1]) cylinder(h=STANDOFF+1+TH-FRONT_WALL,d=SCREW_PILOT); }
 module rrect(w,h,r){ hull() for(sx=[-1,1],sy=[-1,1]) translate([sx*(w/2-r),sy*(h/2-r)]) circle(r); }
@@ -14,22 +14,22 @@ module frame_recess(){ translate([0,0,TH-RECESS]) linear_extrude(RECESS+eps) uni
     translate([27,113.0]) square([200,3.0]); } }    // top bar (open bottom)
 module cuts(){ union(){
   frame_recess();
-  label(39.00,67.00,"JET",2.5,"center",false);
-  label(54.00,67.00,"PI5",2.5,"center",false);
-  label(69.00,67.00,"PICO",2.5,"center",false);
-  label(84.00,67.00,"ZED",2.5,"center",false);
-  label(99.00,67.00,"LIDAR",2.5,"center",false);
-  label(114.00,67.00,"NET",2.5,"center",false);
-  label(129.00,67.00,"48V",2.5,"center",false);
-  label(144.00,67.00,"12V",2.5,"center",false);
-  label(194.50,55.60,"- STATUS -",2.4,"center",false);
-  label(172.00,43.00,"ARMED",2.3,"center",false);
-  label(187.00,43.00,"TRACK",2.3,"center",false);
-  label(202.00,43.00,"FAULT",2.3,"center",false);
-  label(217.00,43.00,"PWR",2.3,"center",false);
-  label(158.00,61.10,"NODES",2.4,"center",true);
-  label(158.00,49.10,"PAN",2.4,"center",true);
-  label(158.00,37.10,"TILT",2.4,"center",true);
+  label(39.00,63.00,"JET",2.5,"center",false);
+  label(54.00,63.00,"PI5",2.5,"center",false);
+  label(69.00,63.00,"PICO",2.5,"center",false);
+  label(84.00,63.00,"ZED",2.5,"center",false);
+  label(99.00,63.00,"LIDAR",2.5,"center",false);
+  label(114.00,63.00,"NET",2.5,"center",false);
+  label(129.00,63.00,"48V",2.5,"center",false);
+  label(144.00,63.00,"12V",2.5,"center",false);
+  label(194.50,51.60,"- STATUS -",2.4,"center",false);
+  label(172.00,39.00,"ARMED",2.3,"center",false);
+  label(187.00,39.00,"TRACK",2.3,"center",false);
+  label(202.00,39.00,"FAULT",2.3,"center",false);
+  label(217.00,39.00,"PWR",2.3,"center",false);
+  label(158.00,57.10,"NODES",2.4,"center",true);
+  label(158.00,45.10,"PAN",2.4,"center",true);
+  label(158.00,33.10,"TILT",2.4,"center",true);
   label(91.50,27.50,"- MODE / CONFIG -",2.3,"center",false);
   label(194.50,27.50,"- COMMAND -",2.3,"center",false);
   label(39.00,10.40,"MODE",2.3,"center",false);
@@ -50,10 +50,10 @@ module cuts(){ union(){
   label(34.00,89.00,"GROUND STATION . autonomous marker turret",3.0,"left",false);
   label(222.00,89.00,"SPX LABS . HMI",3.0,"right",false);
   // LED windows (through)
-  thru_rrect(91.50,62.00,115.00,6.0,1.4);
-  thru_rrect(91.50,50.00,115.00,6.0,1.4);
-  thru_rrect(91.50,38.00,115.00,6.0,1.4);
-  thru_rrect(194.50,50.00,55.00,6.0,1.4);
+  thru_rrect(91.50,58.00,115.00,6.0,1.4);
+  thru_rrect(91.50,46.00,115.00,6.0,1.4);
+  thru_rrect(91.50,34.00,115.00,6.0,1.4);
+  thru_rrect(194.50,46.00,55.00,6.0,1.4);
   // toggle holes + ear slots (through) — mounts are BACK bosses, not here
   thru_circ(39.00,19.00,6.2);
   thru_circ(54.00,19.00,6.2);
@@ -75,22 +75,22 @@ module cuts(){ union(){
 color("#1a1c22") difference(){ union(){ cube([FACE_W,FACE_H,TH]); bosses(); } cuts(); screw_blind(); }
 color("#5b9fd4") frame_recess();
 color("#d4af37") {
-  label(39.00,67.00,"JET",2.5,"center",false);
-  label(54.00,67.00,"PI5",2.5,"center",false);
-  label(69.00,67.00,"PICO",2.5,"center",false);
-  label(84.00,67.00,"ZED",2.5,"center",false);
-  label(99.00,67.00,"LIDAR",2.5,"center",false);
-  label(114.00,67.00,"NET",2.5,"center",false);
-  label(129.00,67.00,"48V",2.5,"center",false);
-  label(144.00,67.00,"12V",2.5,"center",false);
-  label(194.50,55.60,"- STATUS -",2.4,"center",false);
-  label(172.00,43.00,"ARMED",2.3,"center",false);
-  label(187.00,43.00,"TRACK",2.3,"center",false);
-  label(202.00,43.00,"FAULT",2.3,"center",false);
-  label(217.00,43.00,"PWR",2.3,"center",false);
-  label(158.00,61.10,"NODES",2.4,"center",true);
-  label(158.00,49.10,"PAN",2.4,"center",true);
-  label(158.00,37.10,"TILT",2.4,"center",true);
+  label(39.00,63.00,"JET",2.5,"center",false);
+  label(54.00,63.00,"PI5",2.5,"center",false);
+  label(69.00,63.00,"PICO",2.5,"center",false);
+  label(84.00,63.00,"ZED",2.5,"center",false);
+  label(99.00,63.00,"LIDAR",2.5,"center",false);
+  label(114.00,63.00,"NET",2.5,"center",false);
+  label(129.00,63.00,"48V",2.5,"center",false);
+  label(144.00,63.00,"12V",2.5,"center",false);
+  label(194.50,51.60,"- STATUS -",2.4,"center",false);
+  label(172.00,39.00,"ARMED",2.3,"center",false);
+  label(187.00,39.00,"TRACK",2.3,"center",false);
+  label(202.00,39.00,"FAULT",2.3,"center",false);
+  label(217.00,39.00,"PWR",2.3,"center",false);
+  label(158.00,57.10,"NODES",2.4,"center",true);
+  label(158.00,45.10,"PAN",2.4,"center",true);
+  label(158.00,33.10,"TILT",2.4,"center",true);
   label(91.50,27.50,"- MODE / CONFIG -",2.3,"center",false);
   label(194.50,27.50,"- COMMAND -",2.3,"center",false);
   label(39.00,10.40,"MODE",2.3,"center",false);

@@ -33,8 +33,9 @@ LEFT_COLS   = [14, 29, 44, 59, 74, 89, 104, 119]
 STATUS_COLS = [147, 162, 177, 192]
 ROW_Y, STATUS_Y = [64, 76, 88], 76   # rev3: LEDs at the BOTTOM of the board
 LEFT_WIN, STATUS_WIN = (9, 124), (142, 197)
-# rev3: board mounts LEDs-low; fx=25+bx (204 centered in 254), fy=6+by (board top near fascia top)
-AP_X, CONTENT_DX, AP_Y, TOP_BAND, TOGGLE_Z = 25, 0, 6, 0, 19
+# rev3 void board (204x112): fx=25+bx, fy=10+by (112mm board centered in 132 fascia).
+# LEDs at board y64/76/88 -> fascia 74/86/98; switch row (voids) at board y103 -> fascia 113.
+AP_X, CONTENT_DX, AP_Y, TOP_BAND, TOGGLE_Z = 25, 0, 10, 0, 19
 fx = lambda xd: AP_X + CONTENT_DX + xd
 fy = lambda yd: AP_Y + TOP_BAND + yd
 TOG_CY = FACE_H - TOGGLE_Z
