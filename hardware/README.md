@@ -1,39 +1,40 @@
 # Hardware
 
-KiCad project and mechanical files live here. Not yet committed — this documents
-the intended structure and the constraints the board must satisfy.
+IMSPI 8080 front-panel PCB + 3D-printed fascia for the 10" rack.
 
-## Planned files
+## ⬆️ To send to the fab, upload ONE folder: `jlcpcb-rev3/`
+
+That is the only current, DRC-clean package. Everything superseded lives in `OLD/`.
 
 ```
-hardware/
-  imspi8080.kicad_pro
-  imspi8080.kicad_sch      schematic: Pico + 2x TLC5947 + 2x 74HC165
-  imspi8080.kicad_pcb      board outline = panel inner dim
-  imspi8080-panel.step     bezel / case reference for alignment
-  gerbers/                 fab output
+jlcpcb-rev3/
+  imspi8080-rev3-gerbers.zip   <- upload this (copper/mask/silk/paste + PTH & NPTH drill)
+  imspi8080-rev3-cpl.csv       <- placement (83 SMT parts)
+  imspi8080-rev3-bom.csv       <- BoM (electronics only; switches are hand-jumpered)
+  README.txt                   <- step-by-step upload order + gotchas
 ```
 
-## Schematic blocks
+Board: **204 × 99.7 mm**, 2-layer, 1.6 mm FR-4. Fully routed, 0 unconnected, 0 DRC errors.
 
-- RP2040 (Pico) — footprint on castellations or a socket
-- 2x TLC5947 daisy-chained: SIN/SCLK from the Pico, XLAT, BLANK, GSCLK; one Iref
-  resistor per device; 100 nF decoupling per device
-- 2x 74HC165 daisy-chained: SH/LD, CLK, QH to the Pico; 10 kΩ pull network on the
-  inputs; 100 nF decoupling per device
-- 28x 3 mm red LED: anodes to LED rail, cathodes to TLC channels (constant-current
-  sink -> no series resistors)
-- 8x latching toggle + 4x momentary toggle to 74HC165 inputs
-- single 3.3 V rail; 10 uF bulk
+## Current rev3 source (the design behind that package)
 
-See `../docs/bom.md` for parts and `../docs/panel-layout.md` for the bezel grid.
+| File | What it is |
+|---|---|
+| `imspi8080_rev3.kicad_pcb` | the board (+ `.dsn`/`.ses` routing, `.kicad_pro`/`.prl`) |
+| `rev3_place2.py` → `rev3_pads.py` | build chain: signal-flow placement, then bottom-edge switch landing pads |
+| `rev3_routed.png` | routed board render |
+| `faceplate/` | 3D-printed fascia — `gen_faceplate_3d.py` → `faceplate_3d.scad`/`.stl`, `faceplate_preview.png` |
+| `design-spec.md`, `bom.csv`, `imspi8080_skidl.py` | design notes / schematic source |
 
-## Layout constraints (the ones that bite)
+**Switch scheme (rev3):** panel toggles mount on the fascia just below the board's
+bottom edge and jumper straight up to a labeled solder landing-pad cluster each
+(`SWD0-7` data 1×3, `SWC0-3` command 2×3; back-silk `V/Sn/G`, `Cn/G`). No connectors,
+no cables, no board cutouts. The switch pads are bare/hand-soldered, so they are
+excluded from the CPL/BoM.
 
-1. Component origins locked to the bezel hole grid — design the hole pattern in the
-   case CAD first, export positions, place footprints to that grid.
-2. Board-mounted toggles + LEDs: the PCB-to-bezel standoff height must equal the
-   toggle bushing length minus bezel thickness. Measure the toggles you actually
-   buy, then set standoff height and bezel thickness to match. No fixing it post-fab.
-3. Column pitch is set by toggle finger-clearance (~30 mm), not the LEDs. Left block
-   8 columns, right block 4 columns, all inside ~220 mm.
+## `OLD/` — superseded, do NOT upload
+
+- `jlcpcb-rev1/`, `jlcpcb-rev2/` — earlier fab packages (rev1 is the one already ordered)
+- `imspi8080_rev2.*`, `imspi8080.*` — earlier boards
+- `rev3_voids.py`, `rev3_back.png` — the abandoned "switch-through-void" design
+- earlier placement scripts, logs, notes
