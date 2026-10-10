@@ -10,13 +10,15 @@ Board:  204.1 x 112.1 mm, 4-layer (SIG/GND-ish/SIG-ish/SIG - In1/In2 used
 Works as-is with JLCPCB and PCBWay:
   - gerbers/  : all copper (4 layers) + mask/paste/silk + Edge.Cuts,
                 Excellon drill split PTH/NPTH, .gbrjob
-  - imspi8080-rev5-bom.csv (+ .xlsx): BOM, ONE ROW PER DESIGNATOR, 82 rows -
-                exactly the 82 placements in the CPL. User-fitted parts are
-                NOT in the assembly BOM: the 12 board-mounted toggles
-                (8x MTS-102 latching data, 4x MTS-103-M momentary command),
-                spare pull-ups R17/R18, and the optional J5 1x3 debug header.
+  - imspi8080-rev5-bom.csv (+ .xlsx): BOM, ONE ROW PER DESIGNATOR, 94 rows -
+                exactly the 94 placements in the CPL, including the 12
+                through-hole toggles (8x MTS-102 latching data SWD0-7,
+                4x MTS-103-M momentary command SWC0-3; bushing center at the
+                board-void center, Top side, rotation 0 = terminals toward
+                the LED rows). User-fitted parts NOT in the assembly data:
+                spare pull-ups R17/R18 and the optional J5 1x3 debug header.
                 Upload the .csv or .xlsx at the BOM step.
-  - imspi8080-rev5-cpl.csv : pick&place, 82 placements (JLCPCB columns, mm);
+  - imspi8080-rev5-cpl.csv : pick&place, 94 placements (JLCPCB columns, mm), incl. the 12 TH toggles;
                 designators match the BOM 1:1. Also alone in jlcpcb-cpl/.
   - imspi8080_rev5.kicad_pcb / .kicad_pro / .kicad_sch : KiCad 8 source
 

@@ -81,3 +81,15 @@ C21,10uF (C0805),,10uF 0805,1,C0805,"Bulk on 3.3V logic, LED rail, and USB VBUS.
 C22,10uF (C0805),,10uF 0805,1,C0805,"Bulk on 3.3V logic, LED rail, and USB VBUS."
 C23,15pF (C0402),,15pF 0402,1,C0402,Crystal load caps (tune to crystal spec).
 C24,15pF (C0402),,15pF 0402,1,C0402,Crystal load caps (tune to crystal spec).
+SWD0,Mini-toggle SPDT ON-ON (latching) (MTS-102),,MTS-102,1,MTS-102,"TH, bushing through board void; terminals solder to SWD0V/S/G pads (F.Cu)"
+SWD1,Mini-toggle SPDT ON-ON (latching) (MTS-102),,MTS-102,1,MTS-102,"TH, bushing through board void; terminals solder to SWD1V/S/G pads (F.Cu)"
+SWD2,Mini-toggle SPDT ON-ON (latching) (MTS-102),,MTS-102,1,MTS-102,"TH, bushing through board void; terminals solder to SWD2V/S/G pads (F.Cu)"
+SWD3,Mini-toggle SPDT ON-ON (latching) (MTS-102),,MTS-102,1,MTS-102,"TH, bushing through board void; terminals solder to SWD3V/S/G pads (F.Cu)"
+SWD4,Mini-toggle SPDT ON-ON (latching) (MTS-102),,MTS-102,1,MTS-102,"TH, bushing through board void; terminals solder to SWD4V/S/G pads (F.Cu)"
+SWD5,Mini-toggle SPDT ON-ON (latching) (MTS-102),,MTS-102,1,MTS-102,"TH, bushing through board void; terminals solder to SWD5V/S/G pads (F.Cu)"
+SWD6,Mini-toggle SPDT ON-ON (latching) (MTS-102),,MTS-102,1,MTS-102,"TH, bushing through board void; terminals solder to SWD6V/S/G pads (F.Cu)"
+SWD7,Mini-toggle SPDT ON-ON (latching) (MTS-102),,MTS-102,1,MTS-102,"TH, bushing through board void; terminals solder to SWD7V/S/G pads (F.Cu)"
+SWC0,Mini-toggle SPDT momentary (MTS-103-M),,MTS-103-M,1,MTS-103-M,"TH, bushing through board void; terminals solder to SWC0V/C/G pads (F.Cu)"
+SWC1,Mini-toggle SPDT momentary (MTS-103-M),,MTS-103-M,1,MTS-103-M,"TH, bushing through board void; terminals solder to SWC1V/C/G pads (F.Cu)"
+SWC2,Mini-toggle SPDT momentary (MTS-103-M),,MTS-103-M,1,MTS-103-M,"TH, bushing through board void; terminals solder to SWC2V/C/G pads (F.Cu)"
+SWC3,Mini-toggle SPDT momentary (MTS-103-M),,MTS-103-M,1,MTS-103-M,"TH, bushing through board void; terminals solder to SWC3V/C/G pads (F.Cu)"

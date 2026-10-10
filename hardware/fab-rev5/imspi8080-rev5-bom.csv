@@ -81,3 +81,15 @@ LED red 1206,D28,LED-1206,1,red 1206 diffused,No series resistors (TLC5947 is co
 10uF,C22,C0805,1,10uF 0805,"Bulk on 3.3V logic, LED rail, and USB VBUS."
 15pF,C23,C0402,1,15pF 0402,Crystal load caps (tune to crystal spec).
 15pF,C24,C0402,1,15pF 0402,Crystal load caps (tune to crystal spec).
+Mini-toggle SPDT ON-ON (latching),SWD0,MTS-102,1,MTS-102,"TH, bushing through board void; terminals solder to SWD0V/S/G pads (F.Cu)"
+Mini-toggle SPDT ON-ON (latching),SWD1,MTS-102,1,MTS-102,"TH, bushing through board void; terminals solder to SWD1V/S/G pads (F.Cu)"
+Mini-toggle SPDT ON-ON (latching),SWD2,MTS-102,1,MTS-102,"TH, bushing through board void; terminals solder to SWD2V/S/G pads (F.Cu)"
+Mini-toggle SPDT ON-ON (latching),SWD3,MTS-102,1,MTS-102,"TH, bushing through board void; terminals solder to SWD3V/S/G pads (F.Cu)"
+Mini-toggle SPDT ON-ON (latching),SWD4,MTS-102,1,MTS-102,"TH, bushing through board void; terminals solder to SWD4V/S/G pads (F.Cu)"
+Mini-toggle SPDT ON-ON (latching),SWD5,MTS-102,1,MTS-102,"TH, bushing through board void; terminals solder to SWD5V/S/G pads (F.Cu)"
+Mini-toggle SPDT ON-ON (latching),SWD6,MTS-102,1,MTS-102,"TH, bushing through board void; terminals solder to SWD6V/S/G pads (F.Cu)"
+Mini-toggle SPDT ON-ON (latching),SWD7,MTS-102,1,MTS-102,"TH, bushing through board void; terminals solder to SWD7V/S/G pads (F.Cu)"
+Mini-toggle SPDT momentary,SWC0,MTS-103-M,1,MTS-103-M,"TH, bushing through board void; terminals solder to SWC0V/C/G pads (F.Cu)"
+Mini-toggle SPDT momentary,SWC1,MTS-103-M,1,MTS-103-M,"TH, bushing through board void; terminals solder to SWC1V/C/G pads (F.Cu)"
+Mini-toggle SPDT momentary,SWC2,MTS-103-M,1,MTS-103-M,"TH, bushing through board void; terminals solder to SWC2V/C/G pads (F.Cu)"
+Mini-toggle SPDT momentary,SWC3,MTS-103-M,1,MTS-103-M,"TH, bushing through board void; terminals solder to SWC3V/C/G pads (F.Cu)"
