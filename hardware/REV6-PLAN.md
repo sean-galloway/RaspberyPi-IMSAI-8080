@@ -57,3 +57,17 @@ would NOT drive the switch chain. rev6 fixes this for real:
 
 LED grid moves 49.400 -> 49.325 + 15k (x) to match switch-pad/void columns
 (0.075 mm). Bezel windows unaffected (<0.1 mm). Faceplate unaffected.
+
+## Pipeline lessons (2026-10-10)
+
+- **KiCad's Specctra DSN exporter turns a GND zone into a `(plane GND ...)`
+  entry — freerouting then treats every GND pad as pour-connected and routes
+  NOTHING on GND.** The pour fragments behind autorouted tracks into isolated
+  islands (35 of them on the first rev6 attempt). Fix: delete all zones
+  BEFORE export_dsn.py (GND becomes a plain net with ~96 pins), let
+  freerouting route it with real tracks+vias, then post_route.py re-adds the
+  pour. Same lesson applies to any future re-route of this board.
+- patch_dsn.py is OBSOLETE on KiCad 10.0.4: the exporter now emits 150/127
+  rules and a proper Via[0-3]_600:300_um padstack natively. Skip it.
+- kicad-cli drc does not report unconnected_items on this install at all
+  (not exclusions, not severity) - hardware/check_opens.py is the gate.
