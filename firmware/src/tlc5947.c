@@ -1,7 +1,6 @@
 #include "tlc5947.h"
 #include "config.h"
 #include "pico/stdlib.h"
-#include "hardware/pwm.h"
 #include "hardware/gpio.h"
 
 // Local grayscale buffer, one 12-bit value per channel across the whole chain.
@@ -49,18 +48,6 @@ void tlc_show(void) {
     gpio_put(PIN_TLC_XLAT, 0);
 }
 
-// Free-running grayscale clock on PIN_TLC_GSCLK via a PWM slice at ~50% duty.
-static void start_gsclk(void) {
-    gpio_set_function(PIN_TLC_GSCLK, GPIO_FUNC_PWM);
-    uint slice = pwm_gpio_to_slice_num(PIN_TLC_GSCLK);
-    // 125 MHz sys clock / TLC_GSCLK_HZ = wrap count for a full period.
-    uint32_t wrap = (125000000u / TLC_GSCLK_HZ);
-    if (wrap < 2) wrap = 2;
-    pwm_set_wrap(slice, wrap - 1);
-    pwm_set_gpio_level(PIN_TLC_GSCLK, wrap / 2);
-    pwm_set_enabled(slice, true);
-}
-
 void tlc_init(void) {
     gpio_init(PIN_TLC_SIN);   gpio_set_dir(PIN_TLC_SIN, GPIO_OUT);
     gpio_init(PIN_TLC_SCLK);  gpio_set_dir(PIN_TLC_SCLK, GPIO_OUT);
@@ -71,8 +58,8 @@ void tlc_init(void) {
     gpio_put(PIN_TLC_XLAT, 0);
 
     // Hold BLANK high while we prime the chain, then release to enable outputs.
+    // The TLC5947 has an internal grayscale oscillator; no external GSCLK.
     gpio_put(PIN_TLC_BLANK, 1);
-    start_gsclk();
     tlc_set_all(0);
     tlc_show();
     gpio_put(PIN_TLC_BLANK, 0);   // outputs enabled; GS counter free-runs

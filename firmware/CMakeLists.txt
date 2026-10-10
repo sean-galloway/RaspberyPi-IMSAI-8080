@@ -8,6 +8,9 @@ project(imspi8080 C CXX ASM)
 set(CMAKE_C_STANDARD 11)
 set(CMAKE_CXX_STANDARD 17)
 
+# Target the RP2350-based Pico 2 (or any RP2350A board with equivalent GPIOs).
+set(PICO_BOARD pico2 CACHE STRING "Pico board target")
+
 pico_sdk_init()
 
 add_executable(imspi8080
@@ -20,7 +23,6 @@ add_executable(imspi8080
 
 target_link_libraries(imspi8080
     pico_stdlib
-    hardware_pwm
     hardware_gpio
 )
 

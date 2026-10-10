@@ -4,7 +4,8 @@
 // ---------------------------------------------------------------------------
 // IMSPI 8080 panel firmware configuration
 //
-// Pin numbers are RP2040 GPIO numbers (Pico). Adjust to your board.
+// GPIO numbers below apply to the RP2350A rework (rev6). Several nets keep
+// the same RP2040 GPIO numbers because the board wiring is unchanged.
 // ---------------------------------------------------------------------------
 
 // --- TLC5947 LED driver chain ----------------------------------------------
@@ -17,8 +18,6 @@
 #define PIN_TLC_SCLK     2          // serial clock    (SPI SCK)
 #define PIN_TLC_XLAT     4          // latch pulse
 #define PIN_TLC_BLANK    5          // blank / GS counter reset (active high)
-#define PIN_TLC_GSCLK    6          // grayscale PWM reference clock
-#define TLC_GSCLK_HZ     1000000    // grayscale clock frequency
 
 // Set to 1 if your physical cascade wiring clocks device 0 first instead of
 // the last device first (flip if the wrong chip lights up).
@@ -28,9 +27,15 @@
 #define HC165_COUNT      2          // daisy-chained 74HC165s -> 16 inputs
 #define HC165_BITS       (HC165_COUNT * 8)            // 16
 
-#define PIN_HC_PLOAD     10         // SH/LD  (active low parallel load)
-#define PIN_HC_CLK       11         // CLK
-#define PIN_HC_DATA      12         // QH from the last device in the chain
+#define PIN_HC_PLOAD     7          // SH/LD  (active low parallel load)
+#define PIN_HC_CLK       8          // CLK
+#define PIN_HC_DATA      9          // QH from the last device in the chain
+
+// --- SD card (SPI1) --------------------------------------------------------
+#define PIN_SD_SCK       10
+#define PIN_SD_MOSI      11
+#define PIN_SD_MISO      12
+#define PIN_SD_CS        13
 
 // Set to 1 to reverse bit order if switches map backwards.
 #define HC165_REVERSE_BITS 0

@@ -2,7 +2,7 @@
 #define IMSPI_TLC5947_H
 #include <stdint.h>
 
-// Initialize GPIO, SPI/bit-bang lines, and the free-running GSCLK.
+// Initialize GPIO and bit-bang lines for the TLC5947 chain.
 void tlc_init(void);
 
 // Set one channel's 12-bit grayscale value in the local buffer (not yet shown).
