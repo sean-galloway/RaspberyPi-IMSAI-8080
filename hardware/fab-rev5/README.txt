@@ -10,13 +10,13 @@ Board:  204.1 x 112.1 mm, 4-layer (SIG/GND-ish/SIG-ish/SIG - In1/In2 used
 Works as-is with JLCPCB and PCBWay:
   - gerbers/  : all copper (4 layers) + mask/paste/silk + Edge.Cuts,
                 Excellon drill split PTH/NPTH, .gbrjob
-  - imspi8080-rev5-bom.csv (+ .xlsx): BOM, ONE ROW PER DESIGNATOR, 94 rows -
-                exactly the 94 placements in the CPL, including the 12
+  - imspi8080-rev5-bom.csv (+ .xlsx): BOM, ONE ROW PER DESIGNATOR, 95 rows -
+                exactly the 95 placements in the CPL, including the 12
                 through-hole toggles (8x MTS-102 latching data SWD0-7,
                 4x MTS-103-M momentary command SWC0-3; bushing center at the
                 board-void center, Top side, rotation 0 = terminals toward
-                the LED rows). User-fitted parts NOT in the assembly data: none beyond
-                spare pull-ups R17/R18. J5 debug header IS assembled (TH, top side).
+                the LED rows) and the J5 1x3 debug header (TH, top side).
+                Only user-fitted parts: spare pull-ups R17/R18 (not placed).
                 Upload the .csv or .xlsx at the BOM step.
   - imspi8080-rev5-cpl.csv : pick&place, 95 placements (JLCPCB columns, mm), incl. the 12 TH toggles;
                 designators match the BOM 1:1. Also alone in jlcpcb-cpl/.
