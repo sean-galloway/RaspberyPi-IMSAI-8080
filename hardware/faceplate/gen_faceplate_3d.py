@@ -32,11 +32,11 @@ C_PANEL, C_GOLD, C_WHITE, C_BLUE = "#1a1c22", "#d4af37", "#f2f2ee", "#5b9fd4"
 LEFT_COLS   = [14, 29, 44, 59, 74, 89, 104, 119]
 STATUS_COLS = [147, 162, 177, 192]
 ROW_Y, STATUS_Y = [64, 76, 88], 76   # rev3: LEDs at the BOTTOM of the board
-LEFT_WIN, STATUS_WIN = (9, 124), (142, 197)
-# rev3 landing-pad board (204x98): fx=25+bx, fy=11+by. LEDs at board y64/76/88 -> fascia
-# 75/87/99; landing pads at board y93 -> fascia 104; switches mount on the fascia BELOW the
-# board and jumper up to the pads, so the toggle holes sit just under the board bottom edge.
-AP_X, CONTENT_DX, AP_Y, TOP_BAND, TOGGLE_Z = 25, 0, 11, 0, 17
+LEFT_WIN, STATUS_WIN = (11.5, 124), (142, 197)   # left end trimmed to clear the x8 mount standoff
+# rev3 4-layer void board (204x112): fx=25+bx, fy=10+by (board centered in 132 fascia).
+# LEDs at board y64/76/88 -> fascia 74/86/98; switch VOIDS at board y103 -> fascia 113, so the
+# toggle bushing holes sit over the voids (body passes through the board behind them).
+AP_X, CONTENT_DX, AP_Y, TOP_BAND, TOGGLE_Z = 25, 0, 0.6, 0, 28.4
 fx = lambda xd: AP_X + CONTENT_DX + xd
 fy = lambda yd: AP_Y + TOP_BAND + yd
 TOG_CY = FACE_H - TOGGLE_Z
@@ -66,7 +66,7 @@ add((fx(STATUS_COLS[0])+fx(STATUS_COLS[-1]))/2, TOG_CY+11.8, "soft . hw switch a
 add(34, 32, "MARKER SENTRY", 5.5, "left", True, "white")
 add(222, 32, "IMSPI 8080", 7.0, "right", True, "white")
 add(34, 43, "GROUND STATION . autonomous marker turret", 3.0, "left", False, "white")
-add(222, 43, "SPX LABS . HMI", 3.0, "right", False, "white")
+add(222, 43, "Gib Systems . HMI", 3.0, "right", False, "white")
 
 WINDOWS = [(LEFT_WIN[0], LEFT_WIN[1], yc) for yc in ROW_Y] + [(STATUS_WIN[0], STATUS_WIN[1], STATUS_Y)]
 TOGGLES = [(fx(xd), TOG_CY) for xd in LEFT_COLS] + [(fx(xd), TOG_CY) for xd in STATUS_COLS]

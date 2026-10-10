@@ -34,7 +34,11 @@ def led_xy(n):
     return RX0+(n-25)*CP, GY0+RP
 LEDS = {f"D{n}": (led_xy(n)[0], led_xy(n)[1], 0) for n in range(1, 29)}
 HOLES = {"H1": (8,8,0), "H2": (131,8,0), "H3": (196,8,0), "H4": (8,87,0), "H5": (131,87,0), "H6": (196,87,0)}
-FIXED = {**ANCHOR, **LEDS, **HOLES}
+# RP2040 decoupling caps spread above/below U1 (not a tight ring) so each has room for a
+# fanout via to the GND/3V3 planes. U1 QFN spans ~x98.5-105.5 y40.5-47.5; keep clear.
+CAPS = {"C1": (92,38,0), "C2": (100,38,0), "C3": (108,38,0),
+        "C4": (92,50,0), "C5": (100,50,0), "C6": (108,50,0)}
+FIXED = {**ANCHOR, **LEDS, **HOLES, **CAPS}
 
 b = pcbnew.LoadBoard(SRC)
 bb = b.GetBoardEdgesBoundingBox(); OX, OY = bb.GetX(), bb.GetY()

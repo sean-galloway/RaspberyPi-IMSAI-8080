@@ -1,0 +1,49 @@
+type,ref,X_mm,Y_mm,W_or_dia_mm,H_mm,note
+slot,LEDWIN_L0,92.75,67.40,112.50,6.00,LED window (thru)
+slot,LEDWIN_L1,92.75,55.40,112.50,6.00,LED window (thru)
+slot,LEDWIN_L2,92.75,43.40,112.50,6.00,LED window (thru)
+slot,LEDWIN_STATUS,194.50,55.40,55.00,6.00,LED window (thru)
+ledmark,D1,39.00,67.40,1.60,1.60,"LED centre (1206, ref only)"
+ledmark,D2,54.00,67.40,1.60,1.60,"LED centre (1206, ref only)"
+ledmark,D3,69.00,67.40,1.60,1.60,"LED centre (1206, ref only)"
+ledmark,D4,84.00,67.40,1.60,1.60,"LED centre (1206, ref only)"
+ledmark,D5,99.00,67.40,1.60,1.60,"LED centre (1206, ref only)"
+ledmark,D6,114.00,67.40,1.60,1.60,"LED centre (1206, ref only)"
+ledmark,D7,129.00,67.40,1.60,1.60,"LED centre (1206, ref only)"
+ledmark,D8,144.00,67.40,1.60,1.60,"LED centre (1206, ref only)"
+ledmark,D9,39.00,55.40,1.60,1.60,"LED centre (1206, ref only)"
+ledmark,D10,54.00,55.40,1.60,1.60,"LED centre (1206, ref only)"
+ledmark,D11,69.00,55.40,1.60,1.60,"LED centre (1206, ref only)"
+ledmark,D12,84.00,55.40,1.60,1.60,"LED centre (1206, ref only)"
+ledmark,D13,99.00,55.40,1.60,1.60,"LED centre (1206, ref only)"
+ledmark,D14,114.00,55.40,1.60,1.60,"LED centre (1206, ref only)"
+ledmark,D15,129.00,55.40,1.60,1.60,"LED centre (1206, ref only)"
+ledmark,D16,144.00,55.40,1.60,1.60,"LED centre (1206, ref only)"
+ledmark,D17,39.00,43.40,1.60,1.60,"LED centre (1206, ref only)"
+ledmark,D18,54.00,43.40,1.60,1.60,"LED centre (1206, ref only)"
+ledmark,D19,69.00,43.40,1.60,1.60,"LED centre (1206, ref only)"
+ledmark,D20,84.00,43.40,1.60,1.60,"LED centre (1206, ref only)"
+ledmark,D21,99.00,43.40,1.60,1.60,"LED centre (1206, ref only)"
+ledmark,D22,114.00,43.40,1.60,1.60,"LED centre (1206, ref only)"
+ledmark,D23,129.00,43.40,1.60,1.60,"LED centre (1206, ref only)"
+ledmark,D24,144.00,43.40,1.60,1.60,"LED centre (1206, ref only)"
+ledmark,D25,172.00,55.40,1.60,1.60,"LED centre (1206, ref only)"
+ledmark,D26,187.00,55.40,1.60,1.60,"LED centre (1206, ref only)"
+ledmark,D27,202.00,55.40,1.60,1.60,"LED centre (1206, ref only)"
+ledmark,D28,217.00,55.40,1.60,1.60,"LED centre (1206, ref only)"
+hole,SW_DATA0,39.00,28.40,6.20,,switch bushing hole (thru)
+hole,SW_DATA1,54.00,28.40,6.20,,switch bushing hole (thru)
+hole,SW_DATA2,69.00,28.40,6.20,,switch bushing hole (thru)
+hole,SW_DATA3,84.00,28.40,6.20,,switch bushing hole (thru)
+hole,SW_DATA4,99.00,28.40,6.20,,switch bushing hole (thru)
+hole,SW_DATA5,114.00,28.40,6.20,,switch bushing hole (thru)
+hole,SW_DATA6,129.00,28.40,6.20,,switch bushing hole (thru)
+hole,SW_DATA7,144.00,28.40,6.20,,switch bushing hole (thru)
+hole,SW_CMD0,172.00,28.40,6.20,,switch bushing hole (thru)
+hole,SW_CMD1,187.00,28.40,6.20,,switch bushing hole (thru)
+hole,SW_CMD2,202.00,28.40,6.20,,switch bushing hole (thru)
+hole,SW_CMD3,217.00,28.40,6.20,,switch bushing hole (thru)
+mount,MNT,8.00,5.50,9.33,6.77,"rack slot (oval, thru)"
+mount,MNT,8.00,126.50,9.33,6.77,"rack slot (oval, thru)"
+mount,MNT,246.00,5.50,9.33,6.77,"rack slot (oval, thru)"
+mount,MNT,246.00,126.50,9.33,6.77,"rack slot (oval, thru)"
