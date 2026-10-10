@@ -2,16 +2,21 @@
 
 Open items for the IMSPI 8080 project.
 
-## Mechanical — grab the final 3U 3D design
-- [ ] Pull the **final 3-D design for the 10" rack 3U enclosure/panel** from the
-      **jetson-marker-turret** project (that's where the enclosure CAD lives — this panel
-      is its front face, housing an RPi 5 + Jetson Orin AGX 64GB).
-- [ ] Reconcile it against [`hardware/design-spec.md`](hardware/design-spec.md): 214 × 70 mm
-      board, 3U face, ~3–5 mm standoffs. Verify against the real model, not the estimated
-      fit-check dimensions.
-- [ ] Finalize: bezel LED windows (align to the LED grid), **standoff height** (must match
-      the real toggle bushing length — can't fix after fab), and the **separate toggle
-      bracket** wired to J3/J4.
+## Mechanical — 3U 3D case (done 2026-10-10)
+- [x] Pulled the **final 3-D design for the 10" rack 3U enclosure/panel** from
+      **jetson-marker-turret** git history (`f57c7c1^` — it had been stripped from the
+      working tree in the move to this repo). Now lives at
+      [`hardware/case/rack_case.scad`](hardware/case/rack_case.scad) (fascia + tray +
+      side gussets + blue frame).
+- [x] Reconciled against the **measured rev5 PCB** (`imspi8080_rev5.kicad_pcb`,
+      204.1 × 112.1): LED windows, 12 toggle holes, and all 6 PCB bosses re-aligned to
+      the rev5 grid; gusset webs lowered (board bottom z≈19.3). See
+      [`hardware/case/README.md`](hardware/case/README.md) for the mapping table.
+- [x] LED windows + standoff layout finalized from the measured grid. The rev2-era
+      **separate toggle bracket (J3/J4)** is obsolete — rev5 switches mount through the
+      board voids (see `hardware/imspi8080_rev5.kicad_pcb` + fab-rev5 notes).
+      **Remaining in-hand check:** LED dome depth vs `pcb_boss_h=5` and MTS bushing
+      length vs `tog_cbore_dep=2.5` before printing (can't fix after print).
 
 ## Rev1 bring-up (when the board arrives, ~mid/late July 2026)
 - [ ] Flash firmware: hold **BOOTSEL (SW1)**, plug USB into J1, drag the `.uf2` (build from
