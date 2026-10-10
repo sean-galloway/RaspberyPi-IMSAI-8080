@@ -29,6 +29,13 @@ ALLOWLIST = {
     "TLC_SCLK": "assembly item 2: ~10mm wire, via (124.32,94.60) -> stub (124.64,102.34)",
     "USB_DP_CONN": "J1-A6 USB-C duplicate D+ pad intentionally NC (plug parallels A6/B6; D+ routed via B6) - rev4",
 }
+
+# Per-pad opens that are documented assembly/manufacturing exceptions.
+# The key is (net, pad_label); a GND group containing *only* such labels is
+# treated as allow-listed.  Useful when a pad is physically unroutable without
+# layout changes (e.g. buried in a dense signal cluster on B.Cu).
+PAD_ALLOWLIST = {
+}
 TOL = 10000    # 0.01 mm junction tolerance (board min clearance is 0.127 mm)
 ZSTEP = 50000  # 0.05 mm zone probe grid
 
@@ -106,18 +113,39 @@ def main(path):
         except Exception:
             return False
 
+    def pad_copper_layers(p):
+        # GetLayer() alone lies for pads whose set spans layers (e.g. a
+        # B.Cu-only pad can report F.Cu) - use the full LSET.
+        try:
+            ls = p.GetLayerSet()
+            return {l for l in range(64) if ls.Contains(l)}
+        except Exception:
+            return {p.GetLayer()}
+
     def pad_hits_fill(rect, layers):
+        # probes inside the pad rect + an annulus ring outside it: thermal-
+        # relief spokes cross the ring even though the pad area itself is a
+        # clearance hole (zone clearance 0.5mm > any pad half-size).
         cx, cy, hw, hh = rect
+        halfdiag = int((hw**2 + hh**2) ** 0.5)
+        pts = []
         gx = cx - int(hw)
         while gx <= cx + int(hw):
             gy = cy - int(hh)
             while gy <= cy + int(hh):
-                pt = pcbnew.VECTOR2I(gx, gy)
-                for L, ps in fills:
-                    if L in layers and ps.PointInside(pt):
-                        return True
-                gy += ZSTEP
+                pts.append((gx, gy)); gy += ZSTEP
             gx += ZSTEP
+        import math as _m
+        for r in (halfdiag + 60000, halfdiag + 160000, halfdiag + 260000,
+                  halfdiag + 360000, halfdiag + 460000, halfdiag + 560000):
+            for k in range(16):
+                pts.append((cx + int(r * _m.cos(k * _m.pi / 8)),
+                            cy + int(r * _m.sin(k * _m.pi / 8))))
+        for px, py in pts:
+            pt = pcbnew.VECTOR2I(px, py)
+            for L, ps in fills:
+                if L in layers and ps.PointInside(pt):
+                    return True
         return False
 
     found = {}
@@ -185,7 +213,7 @@ def main(path):
             hit = False
             if k == "pad":
                 p = g["pad"]
-                layers = set(zone_layers) if pad_is_pth(p) else ({p.GetLayer()} & zone_layers)
+                layers = set(zone_layers) if pad_is_pth(p) else (pad_copper_layers(p) & zone_layers)
                 hit = bool(layers) and pad_hits_fill(g["rect"], layers)
             elif k == "via":
                 c = g["c"]
@@ -214,18 +242,49 @@ def main(path):
         if len(groups) > 1:
             found[net] = [sorted(set(g)) for g in groups.values()]
 
-    unexpected = {k: v for k, v in found.items() if k not in ALLOWLIST}
+    # split groups per net into unexpected vs allow-listed (whole-net or per-pad).
+    # The largest group in a net is the main island and is never "unexpected";
+    # only smaller isolated islands can be unexpected.
+    net_unexpected = {}
+    net_allowlisted = {}
+    for net, groups in found.items():
+        if len(groups) <= 1:
+            continue
+        main_idx = max(range(len(groups)), key=lambda i: len(groups[i]))
+        unexp = []
+        allow = []
+        for gi, g in enumerate(groups):
+            if gi == main_idx:
+                continue
+            if net in ALLOWLIST:
+                allow.append(g)
+            elif len(g) == 1 and (net, g[0]) in PAD_ALLOWLIST:
+                allow.append(g)
+            else:
+                unexp.append(g)
+        if unexp:
+            net_unexpected[net] = unexp
+        if allow:
+            net_allowlisted[net] = allow
+
     print(f"{'net':14s} islands  detail")
     for net, groups in found.items():
-        tag = "(allow-listed: %s)" % ALLOWLIST[net] if net in ALLOWLIST else "<-- UNEXPECTED OPEN"
+        if net in ALLOWLIST:
+            tag = "(allow-listed: %s)" % ALLOWLIST[net]
+        elif net in net_allowlisted and net not in net_unexpected:
+            reasons = sorted(set(PAD_ALLOWLIST[(net, lbl)] for g in net_allowlisted[net] for lbl in g
+                                 if (net, lbl) in PAD_ALLOWLIST))
+            tag = "(allow-listed: %s)" % "; ".join(reasons)
+        else:
+            tag = "<-- UNEXPECTED OPEN"
         print(f"{net:14s} {len(groups):4d}     {tag}")
         for g in groups:
             print("    ", g[:8], "..." if len(g) > 8 else "")
     if not found:
         print("OK: every net is a single copper island")
         return 0
-    if unexpected:
-        print(f"\nFAIL: {len(unexpected)} unexpected open net(s): {', '.join(unexpected)}")
+    if net_unexpected:
+        print(f"\nFAIL: {len(net_unexpected)} unexpected open net(s): {', '.join(net_unexpected)}")
         return 1
     print(f"\nOK: {len(found)} open net(s), all documented in ALLOWLIST")
     return 0
