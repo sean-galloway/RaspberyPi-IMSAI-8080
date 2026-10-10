@@ -1,0 +1,24 @@
+Designator,Name/Description,Manufacturer,Manufacturer Part Number,Quantity,Footprint,Notes
+U1,RP2040 (QFN-56 (7x7mm)),Raspberry Pi,RP2040,1,QFN-56 (7x7mm),MCU. Copy RP2040 minimal reference design. Extended part.
+U2,QSPI Flash 16MB (SOIC-8),Winbond,W25Q128JVSIQ,1,SOIC-8,Boot flash (firmware lives here). Basic/common.
+Y1,12MHz crystal (SMD-3225-4P),,12MHz 20pF,1,SMD-3225-4P,Core clock. Basic. Load caps C_Y1a/b.
+"U3,U4",TLC5947 24ch LED driver (HTSSOP-32),Texas Instruments,TLC5947DAP,2,HTSSOP-32,"LED drivers, daisy-chained. Extended part (1 line = both)."
+"U5,U6",74HC165 PISO shift reg (TSSOP-16),Texas Instruments,SN74HC165PWR,2,TSSOP-16,"Switch inputs, daisy-chained."
+U7,microSD socket push-pull (SMD push-pull),,microSD TF push-pull,1,SMD push-pull,Data storage (optional). Pick a JLCPCB-library SMD socket.
+U8,AMS1117-3.3 (SOT-223),,AMS1117-3.3,1,SOT-223,3.3V logic rail from USB-C #1 VBUS. Basic.
+U9,AMS1117-3.3 (SOT-223),,AMS1117-3.3,1,SOT-223,3.3V LED anode rail from USB-C #2 VBUS (keeps drivers cool).
+J1,USB-C receptacle 16P (USB-C 16P SMD),,TYPE-C-31-M-12,1,USB-C 16P SMD,Power + data to the Pi. 2x CC resistors + 2x D series R.
+J2,USB-C receptacle 16P (USB-C 16P SMD),,TYPE-C-31-M-12,1,USB-C 16P SMD,Dedicated LED power only (VBUS+GND+CC). No data lines.
+"SWD0,SWD1,SWD2,SWD3,SWD4,SWD5,SWD6,SWD7",Mini-toggle SPDT ON-ON (latching) (MTS-102),,MTS-102,8,MTS-102,"8 latching data toggles (D7..D0), board-mounted, bushing through PCB void"
+"SWC0,SWC1,SWC2,SWC3","Mini-toggle SPDT momentary"" (MTS-103-M)",,MTS-103-M,4,MTS-103-M,"4 momentary command toggles, board-mounted, bushing through PCB void"
+J5,SWD header 1x3 (1x3 2.54mm),,header 1x3,1,1x3 2.54mm,Debug/reflash (optional). Can be pads only.
+"SW1,SW2",Tactile button (SMD tactile 4P),,tactile 3x4mm,2,SMD tactile 4P,"SW1=BOOTSEL, SW2=RUN/reset."
+"D1,D2,D3,D4,D5,D6,D7,D8,D9,D10,D11,D12,D13,D14,D15,D16,D17,D18,D19,D20,D21,D22,D23,D24,D25,D26,D27,D28",LED red 1206 (LED-1206),,red 1206 diffused,28,LED-1206,No series resistors (TLC5947 is constant-current). Check PCBA type is not Standard-Only if you want Economic.
+"R1,R2,R3,R4",5.1k (R0402),,5.1k 0402,4,R0402,"USB-C CC pulldowns: 2 per connector (J1,J2)."
+"R5,R6",27 (R0402),,27R 0402,2,R0402,USB D+/D- series resistors (J1 data only).
+"R7,R8",2.4k (R0402),,2.4k 0402,2,R0402,TLC5947 IREF (sets per-LED current ~15mA; raise R to lower current/heat).
+"R9,R10,R11,R12,R13,R14,R15,R16,R17,R18",10k (R0402),,10k 0402,10,R0402,"Pull-ups: SD CS+data (4), command-switch inputs (4), spares (2)."
+"C1,C2,C3,C4,C5,C6,C7,C8,C9,C10,C11,C12,C13,C14,C15",100nF (C0402),,100nF 0402,15,C0402,"Per-IC decoupling (RP2040 needs several, TLC5947 x2, 165 x2, flash, SD, regs)."
+"C16,C17,C18,C19",1uF (C0402),,1uF 0402,4,C0402,RP2040 core (1.1V) decoupling + SD socket local.
+"C20,C21,C22",10uF (C0805),,10uF 0805,3,C0805,"Bulk on 3.3V logic, LED rail, and USB VBUS."
+"C23,C24",15pF (C0402),,15pF 0402,2,C0402,Crystal load caps (tune to crystal spec).
