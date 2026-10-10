@@ -94,4 +94,4 @@ Mini-toggle SPDT momentary,SWC1,MTS-103-M,1,MTS-103-M,"TH, bushing through board
 Mini-toggle SPDT momentary,SWC2,MTS-103-M,1,MTS-103-M,"TH, bushing through board void; terminals solder to SWC2V/C/G pads (F.Cu) | LCSC C1788493: VERIFY momentary (ON)-OFF-(ON) in datasheet; if latching-only, supply MTS-103-M yourself",C1788493
 Mini-toggle SPDT momentary,SWC3,MTS-103-M,1,MTS-103-M,"TH, bushing through board void; terminals solder to SWC3V/C/G pads (F.Cu) | LCSC C1788493: VERIFY momentary (ON)-OFF-(ON) in datasheet; if latching-only, supply MTS-103-M yourself",C1788493
 SWD header 1x3,J5,1x3 2.54mm,1,header 1x3,"Debug/reflash (optional). Through-hole 2.54mm header, top side. | pick any 2.54mm 1x3 TH header in the JLCPCB tool",
-2.2uH power inductor,L1,L_Bourns-SRU5016 5.2x5.2mm,1,2.2uH 5.2x5.2 shielded >=1.5A,RP2350 VREG DC-DC inductor: VREG_LX to VREG_FB (VCORE). REQUIRED for RP2350 core rail.,
+2.2uH power inductor,L1,SMD 4x4mm (4040),1,SMNR4020-2.2UH,"RP2350 VREG DC-DC inductor: VREG_LX to VREG_FB (VCORE). 3.4A/3.4A, 46mOhm. Orient marking toward U1.",C135262
