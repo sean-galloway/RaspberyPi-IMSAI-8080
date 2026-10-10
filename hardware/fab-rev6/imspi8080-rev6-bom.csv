@@ -1,7 +1,7 @@
 Comment,Designator,Footprint,Qty,MPN / suggested part,Notes,LCSC Part #
 RP2350A,U1,QFN-60-1EP 7x7,1,RP2350A,"MCU, dual Cortex-M33 @150MHz, 520KB SRAM. Needs L1 2.2uH VREG inductor. FW: imspi8080-rp2350.uf2 (PICO_BOARD=pico2).",C42411118
 QSPI Flash 16MB,U2,SOIC-8,1,W25Q128JVSIQ,Boot flash (firmware lives here). Basic/common.,C97521
-12MHz crystal,Y1,SMD-3225-4P,1,12MHz 20pF,Core clock. Basic. Load caps C_Y1a/b.,C9002
+12MHz crystal (10pF load),Y1,SMD-3225-4P,1,12MHz 3225 4P 10pF (ABM8-272-T3 class),"RP2350 guide crystal: 12MHz, CL=10pF, with 15pF load caps C23/C24. Do NOT use a 20pF-load crystal here (rev5's part) - it would run off-tune.",C9002
 TLC5947 24ch LED driver,U3,HTSSOP-32,1,TLC5947DAP,"LED drivers, daisy-chained. Extended part (1 line = both).",C1554203
 TLC5947 24ch LED driver,U4,HTSSOP-32,1,TLC5947DAP,"LED drivers, daisy-chained. Extended part (1 line = both).",C1554203
 74HC165 PISO shift reg,U5,TSSOP-16,1,SN74HC165PWR,"Switch inputs, daisy-chained.",C43420

@@ -26,8 +26,15 @@ WHAT CHANGED vs rev5
 VERIFY BEFORE ORDERING (RP2350 bring-up checklist)
   - W25Q128JVSIQ on Raspberry Pi's RP2350 boot-ROM supported-flash list
     (else pick a listed 16MB part - BOM change only).
-  - Crystal load caps C23/C24 (15pF for the 12MHz/20pF crystal) against
-    the RP2350 hardware design guide.
+  - CRYSTAL (resolved per the RP2350 hardware design guide): Y1 must be
+    12 MHz, 3225, CL=10pF (ABM8-272-T3 class) with the 15pF C23/C24
+    load caps already on the BOM. A 20pF-load crystal (rev5's part) runs
+    off-tune with 15pF caps - do not substitute.
+  - L1 ORIENTATION: the RP2350 SMPS inductor is POLARITY-SENSITIVE
+    (magnetic coupling into crystal/ADC per the design guide). Pick an
+    inductor WITH an orientation mark and add an order remark:
+    "L1 dot/marking toward U1 (RP2350)". This board uses no ADC, so the
+    practical risk is low - but orient it correctly anyway.
   - Flash: hold BOOTSEL (SW1), plug USB into J1, drag
     firmware/imspi8080-rp2350.uf2.
 
