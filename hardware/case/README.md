@@ -41,6 +41,7 @@ OpenSCAD 2021.01+ (`openscad` CLI works):
 openscad -o case.stl   -D 'PART="case"'   rack_case.scad   # black PETG/ASA
 openscad -o gusset.stl -D 'PART="gusset"' rack_case.scad   # print x2
 openscad -o frame.stl  -D 'PART="frame"'  rack_case.scad   # IMSAI blue
+openscad -o caps.stl -D 'MODE="tray"' imsai_paddle_cap.scad  # 12 toggle paddles
 ```
 
 `case.stl` = tray + fascia + centre gusset + Jetson pocket + Pi 5/Pico

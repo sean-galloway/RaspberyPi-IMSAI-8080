@@ -6,8 +6,9 @@ the front face — flood them with paint and wipe the surface flat, leaving fill
 Paint scheme: **branding = white, everything else = gold** (frame gold too). LED windows,
 toggle-paddle holes, PCB standoff holes, and rack-ear slots are cut through.
 
-Labels + grid come from the turret HMI (jetson-marker-turret), aligned to the rev2
-204 x 60 PCB LED grid. Emits:
+Labels + grid come from docs/Imsai_Panel_HMI.md (single source of truth in this
+repo; recovered from jetson-marker-turret history), aligned to the rev5
+204 x 112 PCB LED grid (same grid as hardware/case/rack_case.scad). Emits:
   faceplate_3d.scad     - manufacturable model (recesses cut) -> STL for print/CNC
   faceplate_paint.scad  - colour preview (dark panel + gold/white paint inlays)
 """

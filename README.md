@@ -26,7 +26,7 @@ Matched to the physical panel (see `docs/panel-layout.svg`):
   - 8 data toggles (latching) below
 - Right block: one row of 4 status LEDs over 4 command switches (momentary)
 
-28 LEDs, 12 switches, sized to the ~220 mm usable width of a 10" rack aperture.
+28 LEDs, 12 switches, on a 204 mm board in a 10" rack 3U face.
 Because all 16 address bits are displayed even though only 8 data toggles exist,
 EXAMINE looks fully authentic; address entry is byte-wise (see `docs/protocol.md`).
 
@@ -48,11 +48,18 @@ and pitch math.
 ## Repo layout
 
 ```
-docs/        protocol spec, BOM, panel layout + drawing
+docs/        protocol spec, BOM, panel layout + drawing, HMI mapping (panel legend spec)
 firmware/    RP2040 firmware (Pico SDK, C)
 host/        Python driver + examples for the Pi side
-hardware/    KiCad / mechanical notes
+hardware/    KiCad PCB (rev5) + fab packages + placement/routing scripts
+hardware/case/      canonical 3D rack case: rack_case.scad (fascia + tray + side
+                    gussets + blue frame), STLs, paddle caps — single source of
+                    truth for all panel/case mechanical CAD
+hardware/faceplate/ standalone 4 mm faceplate variant + fascia hole-map fab docs
 ```
+
+The panel/case CAD was consolidated here from jetson-marker-turret (2026-10-10);
+the turret repo no longer hosts panel files. See `TODO.md` for open items.
 
 ## Quick start
 
