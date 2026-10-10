@@ -54,3 +54,15 @@ backwards, flip `HC165_REVERSE_BITS`.
 - Data shift is bit-banged for clarity. If you want more headroom, move SIN/SCLK
   onto a hardware SPI instance; the byte order in `tlc5947.c` stays the same.
 - CRC-8 parameters must stay in sync with `host/imspi/crc8.py`.
+
+## rev6 / RP2350 build
+
+Target is `pico2` (RP2350A). On this machine:
+
+    export PICO_SDK_PATH=$HOME/pico/pico-sdk
+    export PATH=$HOME/opt/arm-gnu-toolchain-13.2.Rel1-x86_64-arm-none-eabi/bin:$PATH
+    cmake -S firmware -B build && cmake --build build
+    # -> build/imspi8080.uf2  (RP2350 UF2 family 0xe48bff56)
+
+A prebuilt RP2350 UF2 from the rev6 port: `imspi8080-rp2350.uf2` (gitignored).
+Boot: hold BOOTSEL (SW1), plug USB into J1, copy the UF2.
