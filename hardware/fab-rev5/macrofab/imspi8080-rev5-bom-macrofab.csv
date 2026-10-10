@@ -93,3 +93,4 @@ SWC0,Mini-toggle SPDT momentary (MTS-103-M),,MTS-103-M,1,MTS-103-M,"TH, bushing 
 SWC1,Mini-toggle SPDT momentary (MTS-103-M),,MTS-103-M,1,MTS-103-M,"TH, bushing through board void; terminals solder to SWC1V/C/G pads (F.Cu)"
 SWC2,Mini-toggle SPDT momentary (MTS-103-M),,MTS-103-M,1,MTS-103-M,"TH, bushing through board void; terminals solder to SWC2V/C/G pads (F.Cu)"
 SWC3,Mini-toggle SPDT momentary (MTS-103-M),,MTS-103-M,1,MTS-103-M,"TH, bushing through board void; terminals solder to SWC3V/C/G pads (F.Cu)"
+J5,SWD header 1x3 (1x3 2.54mm),,header 1x3,1,1x3 2.54mm,"Debug/reflash (optional). Through-hole 2.54mm header, top side."

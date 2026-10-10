@@ -15,10 +15,10 @@ Works as-is with JLCPCB and PCBWay:
                 through-hole toggles (8x MTS-102 latching data SWD0-7,
                 4x MTS-103-M momentary command SWC0-3; bushing center at the
                 board-void center, Top side, rotation 0 = terminals toward
-                the LED rows). User-fitted parts NOT in the assembly data:
-                spare pull-ups R17/R18 and the optional J5 1x3 debug header.
+                the LED rows). User-fitted parts NOT in the assembly data: none beyond
+                spare pull-ups R17/R18. J5 debug header IS assembled (TH, top side).
                 Upload the .csv or .xlsx at the BOM step.
-  - imspi8080-rev5-cpl.csv : pick&place, 94 placements (JLCPCB columns, mm), incl. the 12 TH toggles;
+  - imspi8080-rev5-cpl.csv : pick&place, 95 placements (JLCPCB columns, mm), incl. the 12 TH toggles;
                 designators match the BOM 1:1. Also alone in jlcpcb-cpl/.
   - imspi8080_rev5.kicad_pcb / .kicad_pro / .kicad_sch : KiCad 8 source
 
