@@ -27,6 +27,12 @@ WHAT'S NEW IN REV5 (vs rev4)
     pre-approved fallback and routed everything.
 
 ASSEMBLY NOTES - THREE ITEMS (KiCad DRC: 0 errors, 3 documented items)
+  Open-net check: kicad-cli drc does NOT report unconnected nets on this
+  board (verified 2026-10-10 - no exclusions, not severity/prl gated).
+  Before fab / after any edit run:  python3 check_opens.py
+  It flood-fills copper (layer-aware, incl. the GND pour) and fails on any
+  net that is not a single copper island, with an allow-list for the two
+  assembly items below.
   1. HC_QH (U1 pin 12 -> U6 pin 9): add one 30 AWG wire, ~45 mm, at assembly.
      The pin-12 cluster admits no via; pads are both large and accessible.
   2. TLC_SCLK bridge: add one ~10 mm wire (a 0-ohm 0402 cannot span the
