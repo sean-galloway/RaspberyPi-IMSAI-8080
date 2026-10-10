@@ -29,8 +29,13 @@ WHAT'S NEW IN REV5 (vs rev4)
 ASSEMBLY NOTES - THREE ITEMS (KiCad DRC: 0 errors, 3 documented items)
   1. HC_QH (U1 pin 12 -> U6 pin 9): add one 30 AWG wire, ~45 mm, at assembly.
      The pin-12 cluster admits no via; pads are both large and accessible.
-  2. TLC_SCLK bridge: add one 0-ohm 0402 (or 10 mm wire) between the two
-     TLC_SCLK stubs at approx (124.3, 102.0) -> (124.9, 102.4), top copper.
+  2. TLC_SCLK bridge: add one ~10 mm wire (a 0-ohm 0402 cannot span the
+     gap) between the two TLC_SCLK islands, top copper:
+       - U1-4 stub end: via at (124.32, 94.60)
+       - chain stub:   (124.64, 102.34), via at (125.06, 102.76)
+     Verified by direct copper trace 2026-10-10: island A = {U1-4 pad,
+     2 tracks, via (124.32,94.60)}; island B = the U3-3 -> U4-3 chain
+     (the 5.1 mm tail ending at (189.53,105.91) is a dead stub - ignore).
   3. GND pour has one isolated island pair (cosmetic; every GND pad is
      connected). Optional: one via anywhere in the pour stitches it.
   J1-A6 (USB-C duplicate D+ pad) is intentionally unconnected (plug
