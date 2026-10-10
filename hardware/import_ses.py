@@ -2,7 +2,7 @@
 import os
 import pcbnew
 
-F = "imspi8080.kicad_pcb"
+F = os.environ.get("PCB", "imspi8080.kicad_pcb")
 b = pcbnew.LoadBoard(F)
 ok = pcbnew.ImportSpecctraSES(b, os.path.abspath("imspi8080.ses"))
 if ok:

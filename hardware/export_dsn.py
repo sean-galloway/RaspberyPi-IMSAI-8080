@@ -2,7 +2,7 @@
 import os
 import pcbnew
 
-b = pcbnew.LoadBoard("imspi8080.kicad_pcb")
+b = pcbnew.LoadBoard(os.environ.get("PCB", "imspi8080.kicad_pcb"))
 out = os.path.abspath("imspi8080.dsn")
 ok = pcbnew.ExportSpecctraDSN(b, out)
 print("dsn export:", ok, out)

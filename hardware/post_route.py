@@ -7,9 +7,10 @@ If DRC is clean afterwards, optionally strip redundant B.Cu GND segments with
 Run:  /usr/bin/python3 post_route.py [--strip-gnd-segments]
 """
 import sys
+import os
 import pcbnew
 
-F = "imspi8080.kicad_pcb"
+F = os.environ.get("PCB", "imspi8080.kicad_pcb")
 STRIP = "--strip-gnd-segments" in sys.argv
 
 b = pcbnew.LoadBoard(F)
@@ -22,7 +23,7 @@ gnd = b.FindNet("GND")
 z = pcbnew.ZONE(b)
 z.SetLayer(pcbnew.B_Cu)
 z.SetNet(gnd)
-z.SetPadConnection(pcbnew.ZONE_CONNECTION_THERMAL)
+z.SetPadConnection(pcbnew.ZONE_CONNECTION_FULL)
 z.SetThermalReliefGap(pcbnew.FromMM(0.2))
 z.SetThermalReliefSpokeWidth(pcbnew.FromMM(0.3))
 z.SetMinThickness(pcbnew.FromMM(0.2))

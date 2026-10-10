@@ -5,12 +5,13 @@ Same rules as rev2_check.py: only same-layer courtyard overlaps matter
 
     /usr/bin/python3 check_rev4.py
 """
+import os
 import pcbnew
 
-F = "imspi8080.kicad_pcb"
-BW, BH = 204.0, 60.0
+F = os.environ.get("PCB", "imspi8080.kicad_pcb")
 board = pcbnew.LoadBoard(F)
 bb = board.GetBoardEdgesBoundingBox(); OX, OY = bb.GetX(), bb.GetY()
+BW, BH = pcbnew.ToMM(bb.GetWidth()), pcbnew.ToMM(bb.GetHeight())
 
 def cbb(f):
     lay = pcbnew.B_CrtYd if f.GetLayer() == pcbnew.B_Cu else pcbnew.F_CrtYd
