@@ -1,96 +1,96 @@
-Comment,Designator,Footprint,Qty,MPN / suggested part,Notes
-RP2040,U1,QFN-56 (7x7mm),1,RP2040,MCU. Copy RP2040 minimal reference design. Extended part.
-QSPI Flash 16MB,U2,SOIC-8,1,W25Q128JVSIQ,Boot flash (firmware lives here). Basic/common.
-12MHz crystal,Y1,SMD-3225-4P,1,12MHz 20pF,Core clock. Basic. Load caps C_Y1a/b.
-TLC5947 24ch LED driver,U3,HTSSOP-32,1,TLC5947DAP,"LED drivers, daisy-chained. Extended part (1 line = both)."
-TLC5947 24ch LED driver,U4,HTSSOP-32,1,TLC5947DAP,"LED drivers, daisy-chained. Extended part (1 line = both)."
-74HC165 PISO shift reg,U5,TSSOP-16,1,SN74HC165PWR,"Switch inputs, daisy-chained."
-74HC165 PISO shift reg,U6,TSSOP-16,1,SN74HC165PWR,"Switch inputs, daisy-chained."
-microSD socket push-pull,U7,SMD push-pull,1,microSD TF push-pull,Data storage (optional). Pick a JLCPCB-library SMD socket.
-AMS1117-3.3,U8,SOT-223,1,AMS1117-3.3,3.3V logic rail from USB-C #1 VBUS. Basic.
-AMS1117-3.3,U9,SOT-223,1,AMS1117-3.3,3.3V LED anode rail from USB-C #2 VBUS (keeps drivers cool).
-USB-C receptacle 16P,J1,USB-C 16P SMD,1,TYPE-C-31-M-12,Power + data to the Pi. 2x CC resistors + 2x D series R.
-USB-C receptacle 16P,J2,USB-C 16P SMD,1,TYPE-C-31-M-12,Dedicated LED power only (VBUS+GND+CC). No data lines.
-Tactile button,SW1,SMD tactile 4P,1,tactile 3x4mm,"SW1=BOOTSEL, SW2=RUN/reset."
-Tactile button,SW2,SMD tactile 4P,1,tactile 3x4mm,"SW1=BOOTSEL, SW2=RUN/reset."
-LED red 1206,D1,LED-1206,1,red 1206 diffused,No series resistors (TLC5947 is constant-current). Check PCBA type is not Standard-Only if you want Economic.
-LED red 1206,D2,LED-1206,1,red 1206 diffused,No series resistors (TLC5947 is constant-current). Check PCBA type is not Standard-Only if you want Economic.
-LED red 1206,D3,LED-1206,1,red 1206 diffused,No series resistors (TLC5947 is constant-current). Check PCBA type is not Standard-Only if you want Economic.
-LED red 1206,D4,LED-1206,1,red 1206 diffused,No series resistors (TLC5947 is constant-current). Check PCBA type is not Standard-Only if you want Economic.
-LED red 1206,D5,LED-1206,1,red 1206 diffused,No series resistors (TLC5947 is constant-current). Check PCBA type is not Standard-Only if you want Economic.
-LED red 1206,D6,LED-1206,1,red 1206 diffused,No series resistors (TLC5947 is constant-current). Check PCBA type is not Standard-Only if you want Economic.
-LED red 1206,D7,LED-1206,1,red 1206 diffused,No series resistors (TLC5947 is constant-current). Check PCBA type is not Standard-Only if you want Economic.
-LED red 1206,D8,LED-1206,1,red 1206 diffused,No series resistors (TLC5947 is constant-current). Check PCBA type is not Standard-Only if you want Economic.
-LED red 1206,D9,LED-1206,1,red 1206 diffused,No series resistors (TLC5947 is constant-current). Check PCBA type is not Standard-Only if you want Economic.
-LED red 1206,D10,LED-1206,1,red 1206 diffused,No series resistors (TLC5947 is constant-current). Check PCBA type is not Standard-Only if you want Economic.
-LED red 1206,D11,LED-1206,1,red 1206 diffused,No series resistors (TLC5947 is constant-current). Check PCBA type is not Standard-Only if you want Economic.
-LED red 1206,D12,LED-1206,1,red 1206 diffused,No series resistors (TLC5947 is constant-current). Check PCBA type is not Standard-Only if you want Economic.
-LED red 1206,D13,LED-1206,1,red 1206 diffused,No series resistors (TLC5947 is constant-current). Check PCBA type is not Standard-Only if you want Economic.
-LED red 1206,D14,LED-1206,1,red 1206 diffused,No series resistors (TLC5947 is constant-current). Check PCBA type is not Standard-Only if you want Economic.
-LED red 1206,D15,LED-1206,1,red 1206 diffused,No series resistors (TLC5947 is constant-current). Check PCBA type is not Standard-Only if you want Economic.
-LED red 1206,D16,LED-1206,1,red 1206 diffused,No series resistors (TLC5947 is constant-current). Check PCBA type is not Standard-Only if you want Economic.
-LED red 1206,D17,LED-1206,1,red 1206 diffused,No series resistors (TLC5947 is constant-current). Check PCBA type is not Standard-Only if you want Economic.
-LED red 1206,D18,LED-1206,1,red 1206 diffused,No series resistors (TLC5947 is constant-current). Check PCBA type is not Standard-Only if you want Economic.
-LED red 1206,D19,LED-1206,1,red 1206 diffused,No series resistors (TLC5947 is constant-current). Check PCBA type is not Standard-Only if you want Economic.
-LED red 1206,D20,LED-1206,1,red 1206 diffused,No series resistors (TLC5947 is constant-current). Check PCBA type is not Standard-Only if you want Economic.
-LED red 1206,D21,LED-1206,1,red 1206 diffused,No series resistors (TLC5947 is constant-current). Check PCBA type is not Standard-Only if you want Economic.
-LED red 1206,D22,LED-1206,1,red 1206 diffused,No series resistors (TLC5947 is constant-current). Check PCBA type is not Standard-Only if you want Economic.
-LED red 1206,D23,LED-1206,1,red 1206 diffused,No series resistors (TLC5947 is constant-current). Check PCBA type is not Standard-Only if you want Economic.
-LED red 1206,D24,LED-1206,1,red 1206 diffused,No series resistors (TLC5947 is constant-current). Check PCBA type is not Standard-Only if you want Economic.
-LED red 1206,D25,LED-1206,1,red 1206 diffused,No series resistors (TLC5947 is constant-current). Check PCBA type is not Standard-Only if you want Economic.
-LED red 1206,D26,LED-1206,1,red 1206 diffused,No series resistors (TLC5947 is constant-current). Check PCBA type is not Standard-Only if you want Economic.
-LED red 1206,D27,LED-1206,1,red 1206 diffused,No series resistors (TLC5947 is constant-current). Check PCBA type is not Standard-Only if you want Economic.
-LED red 1206,D28,LED-1206,1,red 1206 diffused,No series resistors (TLC5947 is constant-current). Check PCBA type is not Standard-Only if you want Economic.
-5.1k,R1,R0402,1,5.1k 0402,"USB-C CC pulldowns: 2 per connector (J1,J2)."
-5.1k,R2,R0402,1,5.1k 0402,"USB-C CC pulldowns: 2 per connector (J1,J2)."
-5.1k,R3,R0402,1,5.1k 0402,"USB-C CC pulldowns: 2 per connector (J1,J2)."
-5.1k,R4,R0402,1,5.1k 0402,"USB-C CC pulldowns: 2 per connector (J1,J2)."
-27,R5,R0402,1,27R 0402,USB D+/D- series resistors (J1 data only).
-27,R6,R0402,1,27R 0402,USB D+/D- series resistors (J1 data only).
-2.4k,R7,R0402,1,2.4k 0402,TLC5947 IREF (sets per-LED current ~15mA; raise R to lower current/heat).
-2.4k,R8,R0402,1,2.4k 0402,TLC5947 IREF (sets per-LED current ~15mA; raise R to lower current/heat).
-10k,R9,R0402,1,10k 0402,"Pull-ups: SD CS+data (4), command-switch inputs (4), spares (2)."
-10k,R10,R0402,1,10k 0402,"Pull-ups: SD CS+data (4), command-switch inputs (4), spares (2)."
-10k,R11,R0402,1,10k 0402,"Pull-ups: SD CS+data (4), command-switch inputs (4), spares (2)."
-10k,R12,R0402,1,10k 0402,"Pull-ups: SD CS+data (4), command-switch inputs (4), spares (2)."
-10k,R13,R0402,1,10k 0402,"Pull-ups: SD CS+data (4), command-switch inputs (4), spares (2)."
-10k,R14,R0402,1,10k 0402,"Pull-ups: SD CS+data (4), command-switch inputs (4), spares (2)."
-10k,R15,R0402,1,10k 0402,"Pull-ups: SD CS+data (4), command-switch inputs (4), spares (2)."
-10k,R16,R0402,1,10k 0402,"Pull-ups: SD CS+data (4), command-switch inputs (4), spares (2)."
-100nF,C1,C0402,1,100nF 0402,"Per-IC decoupling (RP2040 needs several, TLC5947 x2, 165 x2, flash, SD, regs)."
-100nF,C2,C0402,1,100nF 0402,"Per-IC decoupling (RP2040 needs several, TLC5947 x2, 165 x2, flash, SD, regs)."
-100nF,C3,C0402,1,100nF 0402,"Per-IC decoupling (RP2040 needs several, TLC5947 x2, 165 x2, flash, SD, regs)."
-100nF,C4,C0402,1,100nF 0402,"Per-IC decoupling (RP2040 needs several, TLC5947 x2, 165 x2, flash, SD, regs)."
-100nF,C5,C0402,1,100nF 0402,"Per-IC decoupling (RP2040 needs several, TLC5947 x2, 165 x2, flash, SD, regs)."
-100nF,C6,C0402,1,100nF 0402,"Per-IC decoupling (RP2040 needs several, TLC5947 x2, 165 x2, flash, SD, regs)."
-100nF,C7,C0402,1,100nF 0402,"Per-IC decoupling (RP2040 needs several, TLC5947 x2, 165 x2, flash, SD, regs)."
-100nF,C8,C0402,1,100nF 0402,"Per-IC decoupling (RP2040 needs several, TLC5947 x2, 165 x2, flash, SD, regs)."
-100nF,C9,C0402,1,100nF 0402,"Per-IC decoupling (RP2040 needs several, TLC5947 x2, 165 x2, flash, SD, regs)."
-100nF,C10,C0402,1,100nF 0402,"Per-IC decoupling (RP2040 needs several, TLC5947 x2, 165 x2, flash, SD, regs)."
-100nF,C11,C0402,1,100nF 0402,"Per-IC decoupling (RP2040 needs several, TLC5947 x2, 165 x2, flash, SD, regs)."
-100nF,C12,C0402,1,100nF 0402,"Per-IC decoupling (RP2040 needs several, TLC5947 x2, 165 x2, flash, SD, regs)."
-100nF,C13,C0402,1,100nF 0402,"Per-IC decoupling (RP2040 needs several, TLC5947 x2, 165 x2, flash, SD, regs)."
-100nF,C14,C0402,1,100nF 0402,"Per-IC decoupling (RP2040 needs several, TLC5947 x2, 165 x2, flash, SD, regs)."
-100nF,C15,C0402,1,100nF 0402,"Per-IC decoupling (RP2040 needs several, TLC5947 x2, 165 x2, flash, SD, regs)."
-1uF,C16,C0402,1,1uF 0402,RP2040 core (1.1V) decoupling + SD socket local.
-1uF,C17,C0402,1,1uF 0402,RP2040 core (1.1V) decoupling + SD socket local.
-1uF,C18,C0402,1,1uF 0402,RP2040 core (1.1V) decoupling + SD socket local.
-1uF,C19,C0402,1,1uF 0402,RP2040 core (1.1V) decoupling + SD socket local.
-10uF,C20,C0805,1,10uF 0805,"Bulk on 3.3V logic, LED rail, and USB VBUS."
-10uF,C21,C0805,1,10uF 0805,"Bulk on 3.3V logic, LED rail, and USB VBUS."
-10uF,C22,C0805,1,10uF 0805,"Bulk on 3.3V logic, LED rail, and USB VBUS."
-15pF,C23,C0402,1,15pF 0402,Crystal load caps (tune to crystal spec).
-15pF,C24,C0402,1,15pF 0402,Crystal load caps (tune to crystal spec).
-Mini-toggle SPDT ON-ON (latching),SWD0,MTS-102,1,MTS-102,"TH, bushing through board void; terminals solder to SWD0V/S/G pads (F.Cu)"
-Mini-toggle SPDT ON-ON (latching),SWD1,MTS-102,1,MTS-102,"TH, bushing through board void; terminals solder to SWD1V/S/G pads (F.Cu)"
-Mini-toggle SPDT ON-ON (latching),SWD2,MTS-102,1,MTS-102,"TH, bushing through board void; terminals solder to SWD2V/S/G pads (F.Cu)"
-Mini-toggle SPDT ON-ON (latching),SWD3,MTS-102,1,MTS-102,"TH, bushing through board void; terminals solder to SWD3V/S/G pads (F.Cu)"
-Mini-toggle SPDT ON-ON (latching),SWD4,MTS-102,1,MTS-102,"TH, bushing through board void; terminals solder to SWD4V/S/G pads (F.Cu)"
-Mini-toggle SPDT ON-ON (latching),SWD5,MTS-102,1,MTS-102,"TH, bushing through board void; terminals solder to SWD5V/S/G pads (F.Cu)"
-Mini-toggle SPDT ON-ON (latching),SWD6,MTS-102,1,MTS-102,"TH, bushing through board void; terminals solder to SWD6V/S/G pads (F.Cu)"
-Mini-toggle SPDT ON-ON (latching),SWD7,MTS-102,1,MTS-102,"TH, bushing through board void; terminals solder to SWD7V/S/G pads (F.Cu)"
-Mini-toggle SPDT momentary,SWC0,MTS-103-M,1,MTS-103-M,"TH, bushing through board void; terminals solder to SWC0V/C/G pads (F.Cu)"
-Mini-toggle SPDT momentary,SWC1,MTS-103-M,1,MTS-103-M,"TH, bushing through board void; terminals solder to SWC1V/C/G pads (F.Cu)"
-Mini-toggle SPDT momentary,SWC2,MTS-103-M,1,MTS-103-M,"TH, bushing through board void; terminals solder to SWC2V/C/G pads (F.Cu)"
-Mini-toggle SPDT momentary,SWC3,MTS-103-M,1,MTS-103-M,"TH, bushing through board void; terminals solder to SWC3V/C/G pads (F.Cu)"
-SWD header 1x3,J5,1x3 2.54mm,1,header 1x3,"Debug/reflash (optional). Through-hole 2.54mm header, top side."
+Comment,Designator,Footprint,Qty,MPN / suggested part,Notes,LCSC Part #
+RP2040,U1,QFN-56 (7x7mm),1,RP2040,MCU. Copy RP2040 minimal reference design. Extended part.,C2761095
+QSPI Flash 16MB,U2,SOIC-8,1,W25Q128JVSIQ,Boot flash (firmware lives here). Basic/common.,C97521
+12MHz crystal,Y1,SMD-3225-4P,1,12MHz 20pF,Core clock. Basic. Load caps C_Y1a/b.,C9002
+TLC5947 24ch LED driver,U3,HTSSOP-32,1,TLC5947DAP,"LED drivers, daisy-chained. Extended part (1 line = both).",C1554203
+TLC5947 24ch LED driver,U4,HTSSOP-32,1,TLC5947DAP,"LED drivers, daisy-chained. Extended part (1 line = both).",C1554203
+74HC165 PISO shift reg,U5,TSSOP-16,1,SN74HC165PWR,"Switch inputs, daisy-chained.",C43420
+74HC165 PISO shift reg,U6,TSSOP-16,1,SN74HC165PWR,"Switch inputs, daisy-chained.",C43420
+microSD socket push-pull,U7,SMD push-pull,1,microSD TF push-pull,Data storage (optional). Pick a JLCPCB-library SMD socket. | LCSC C91145: VERIFY package outline vs footprint before confirming,C91145
+AMS1117-3.3,U8,SOT-223,1,AMS1117-3.3,3.3V logic rail from USB-C #1 VBUS. Basic.,
+AMS1117-3.3,U9,SOT-223,1,AMS1117-3.3,3.3V LED anode rail from USB-C #2 VBUS (keeps drivers cool).,
+USB-C receptacle 16P,J1,USB-C 16P SMD,1,TYPE-C-31-M-12,Power + data to the Pi. 2x CC resistors + 2x D series R.,C165948
+USB-C receptacle 16P,J2,USB-C 16P SMD,1,TYPE-C-31-M-12,Dedicated LED power only (VBUS+GND+CC). No data lines.,C165948
+Tactile button,SW1,SMD tactile 4P,1,tactile 3x4mm,"SW1=BOOTSEL, SW2=RUN/reset. | pick any in-stock 3x4mm SMD tactile in the JLCPCB tool",
+Tactile button,SW2,SMD tactile 4P,1,tactile 3x4mm,"SW1=BOOTSEL, SW2=RUN/reset. | pick any in-stock 3x4mm SMD tactile in the JLCPCB tool",
+LED red 1206,D1,LED-1206,1,red 1206 diffused,No series resistors (TLC5947 is constant-current). Check PCBA type is not Standard-Only if you want Economic.,
+LED red 1206,D2,LED-1206,1,red 1206 diffused,No series resistors (TLC5947 is constant-current). Check PCBA type is not Standard-Only if you want Economic.,
+LED red 1206,D3,LED-1206,1,red 1206 diffused,No series resistors (TLC5947 is constant-current). Check PCBA type is not Standard-Only if you want Economic.,
+LED red 1206,D4,LED-1206,1,red 1206 diffused,No series resistors (TLC5947 is constant-current). Check PCBA type is not Standard-Only if you want Economic.,
+LED red 1206,D5,LED-1206,1,red 1206 diffused,No series resistors (TLC5947 is constant-current). Check PCBA type is not Standard-Only if you want Economic.,
+LED red 1206,D6,LED-1206,1,red 1206 diffused,No series resistors (TLC5947 is constant-current). Check PCBA type is not Standard-Only if you want Economic.,
+LED red 1206,D7,LED-1206,1,red 1206 diffused,No series resistors (TLC5947 is constant-current). Check PCBA type is not Standard-Only if you want Economic.,
+LED red 1206,D8,LED-1206,1,red 1206 diffused,No series resistors (TLC5947 is constant-current). Check PCBA type is not Standard-Only if you want Economic.,
+LED red 1206,D9,LED-1206,1,red 1206 diffused,No series resistors (TLC5947 is constant-current). Check PCBA type is not Standard-Only if you want Economic.,
+LED red 1206,D10,LED-1206,1,red 1206 diffused,No series resistors (TLC5947 is constant-current). Check PCBA type is not Standard-Only if you want Economic.,
+LED red 1206,D11,LED-1206,1,red 1206 diffused,No series resistors (TLC5947 is constant-current). Check PCBA type is not Standard-Only if you want Economic.,
+LED red 1206,D12,LED-1206,1,red 1206 diffused,No series resistors (TLC5947 is constant-current). Check PCBA type is not Standard-Only if you want Economic.,
+LED red 1206,D13,LED-1206,1,red 1206 diffused,No series resistors (TLC5947 is constant-current). Check PCBA type is not Standard-Only if you want Economic.,
+LED red 1206,D14,LED-1206,1,red 1206 diffused,No series resistors (TLC5947 is constant-current). Check PCBA type is not Standard-Only if you want Economic.,
+LED red 1206,D15,LED-1206,1,red 1206 diffused,No series resistors (TLC5947 is constant-current). Check PCBA type is not Standard-Only if you want Economic.,
+LED red 1206,D16,LED-1206,1,red 1206 diffused,No series resistors (TLC5947 is constant-current). Check PCBA type is not Standard-Only if you want Economic.,
+LED red 1206,D17,LED-1206,1,red 1206 diffused,No series resistors (TLC5947 is constant-current). Check PCBA type is not Standard-Only if you want Economic.,
+LED red 1206,D18,LED-1206,1,red 1206 diffused,No series resistors (TLC5947 is constant-current). Check PCBA type is not Standard-Only if you want Economic.,
+LED red 1206,D19,LED-1206,1,red 1206 diffused,No series resistors (TLC5947 is constant-current). Check PCBA type is not Standard-Only if you want Economic.,
+LED red 1206,D20,LED-1206,1,red 1206 diffused,No series resistors (TLC5947 is constant-current). Check PCBA type is not Standard-Only if you want Economic.,
+LED red 1206,D21,LED-1206,1,red 1206 diffused,No series resistors (TLC5947 is constant-current). Check PCBA type is not Standard-Only if you want Economic.,
+LED red 1206,D22,LED-1206,1,red 1206 diffused,No series resistors (TLC5947 is constant-current). Check PCBA type is not Standard-Only if you want Economic.,
+LED red 1206,D23,LED-1206,1,red 1206 diffused,No series resistors (TLC5947 is constant-current). Check PCBA type is not Standard-Only if you want Economic.,
+LED red 1206,D24,LED-1206,1,red 1206 diffused,No series resistors (TLC5947 is constant-current). Check PCBA type is not Standard-Only if you want Economic.,
+LED red 1206,D25,LED-1206,1,red 1206 diffused,No series resistors (TLC5947 is constant-current). Check PCBA type is not Standard-Only if you want Economic.,
+LED red 1206,D26,LED-1206,1,red 1206 diffused,No series resistors (TLC5947 is constant-current). Check PCBA type is not Standard-Only if you want Economic.,
+LED red 1206,D27,LED-1206,1,red 1206 diffused,No series resistors (TLC5947 is constant-current). Check PCBA type is not Standard-Only if you want Economic.,
+LED red 1206,D28,LED-1206,1,red 1206 diffused,No series resistors (TLC5947 is constant-current). Check PCBA type is not Standard-Only if you want Economic.,
+5.1k,R1,R0402,1,5.1k 0402,"USB-C CC pulldowns: 2 per connector (J1,J2).",
+5.1k,R2,R0402,1,5.1k 0402,"USB-C CC pulldowns: 2 per connector (J1,J2).",
+5.1k,R3,R0402,1,5.1k 0402,"USB-C CC pulldowns: 2 per connector (J1,J2).",
+5.1k,R4,R0402,1,5.1k 0402,"USB-C CC pulldowns: 2 per connector (J1,J2).",
+27,R5,R0402,1,27R 0402,USB D+/D- series resistors (J1 data only).,
+27,R6,R0402,1,27R 0402,USB D+/D- series resistors (J1 data only).,
+2.4k,R7,R0402,1,2.4k 0402,TLC5947 IREF (sets per-LED current ~15mA; raise R to lower current/heat).,
+2.4k,R8,R0402,1,2.4k 0402,TLC5947 IREF (sets per-LED current ~15mA; raise R to lower current/heat).,
+10k,R9,R0402,1,10k 0402,"Pull-ups: SD CS+data (4), command-switch inputs (4), spares (2).",
+10k,R10,R0402,1,10k 0402,"Pull-ups: SD CS+data (4), command-switch inputs (4), spares (2).",
+10k,R11,R0402,1,10k 0402,"Pull-ups: SD CS+data (4), command-switch inputs (4), spares (2).",
+10k,R12,R0402,1,10k 0402,"Pull-ups: SD CS+data (4), command-switch inputs (4), spares (2).",
+10k,R13,R0402,1,10k 0402,"Pull-ups: SD CS+data (4), command-switch inputs (4), spares (2).",
+10k,R14,R0402,1,10k 0402,"Pull-ups: SD CS+data (4), command-switch inputs (4), spares (2).",
+10k,R15,R0402,1,10k 0402,"Pull-ups: SD CS+data (4), command-switch inputs (4), spares (2).",
+10k,R16,R0402,1,10k 0402,"Pull-ups: SD CS+data (4), command-switch inputs (4), spares (2).",
+100nF,C1,C0402,1,100nF 0402,"Per-IC decoupling (RP2040 needs several, TLC5947 x2, 165 x2, flash, SD, regs).",
+100nF,C2,C0402,1,100nF 0402,"Per-IC decoupling (RP2040 needs several, TLC5947 x2, 165 x2, flash, SD, regs).",
+100nF,C3,C0402,1,100nF 0402,"Per-IC decoupling (RP2040 needs several, TLC5947 x2, 165 x2, flash, SD, regs).",
+100nF,C4,C0402,1,100nF 0402,"Per-IC decoupling (RP2040 needs several, TLC5947 x2, 165 x2, flash, SD, regs).",
+100nF,C5,C0402,1,100nF 0402,"Per-IC decoupling (RP2040 needs several, TLC5947 x2, 165 x2, flash, SD, regs).",
+100nF,C6,C0402,1,100nF 0402,"Per-IC decoupling (RP2040 needs several, TLC5947 x2, 165 x2, flash, SD, regs).",
+100nF,C7,C0402,1,100nF 0402,"Per-IC decoupling (RP2040 needs several, TLC5947 x2, 165 x2, flash, SD, regs).",
+100nF,C8,C0402,1,100nF 0402,"Per-IC decoupling (RP2040 needs several, TLC5947 x2, 165 x2, flash, SD, regs).",
+100nF,C9,C0402,1,100nF 0402,"Per-IC decoupling (RP2040 needs several, TLC5947 x2, 165 x2, flash, SD, regs).",
+100nF,C10,C0402,1,100nF 0402,"Per-IC decoupling (RP2040 needs several, TLC5947 x2, 165 x2, flash, SD, regs).",
+100nF,C11,C0402,1,100nF 0402,"Per-IC decoupling (RP2040 needs several, TLC5947 x2, 165 x2, flash, SD, regs).",
+100nF,C12,C0402,1,100nF 0402,"Per-IC decoupling (RP2040 needs several, TLC5947 x2, 165 x2, flash, SD, regs).",
+100nF,C13,C0402,1,100nF 0402,"Per-IC decoupling (RP2040 needs several, TLC5947 x2, 165 x2, flash, SD, regs).",
+100nF,C14,C0402,1,100nF 0402,"Per-IC decoupling (RP2040 needs several, TLC5947 x2, 165 x2, flash, SD, regs).",
+100nF,C15,C0402,1,100nF 0402,"Per-IC decoupling (RP2040 needs several, TLC5947 x2, 165 x2, flash, SD, regs).",
+1uF,C16,C0402,1,1uF 0402,RP2040 core (1.1V) decoupling + SD socket local.,
+1uF,C17,C0402,1,1uF 0402,RP2040 core (1.1V) decoupling + SD socket local.,
+1uF,C18,C0402,1,1uF 0402,RP2040 core (1.1V) decoupling + SD socket local.,
+1uF,C19,C0402,1,1uF 0402,RP2040 core (1.1V) decoupling + SD socket local.,
+10uF,C20,C0805,1,10uF 0805,"Bulk on 3.3V logic, LED rail, and USB VBUS.",
+10uF,C21,C0805,1,10uF 0805,"Bulk on 3.3V logic, LED rail, and USB VBUS.",
+10uF,C22,C0805,1,10uF 0805,"Bulk on 3.3V logic, LED rail, and USB VBUS.",
+15pF,C23,C0402,1,15pF 0402,Crystal load caps (tune to crystal spec).,
+15pF,C24,C0402,1,15pF 0402,Crystal load caps (tune to crystal spec).,
+Mini-toggle SPDT ON-ON (latching),SWD0,MTS-102,1,MTS-102,"TH, bushing through board void; terminals solder to SWD0V/S/G pads (F.Cu)",C1788492
+Mini-toggle SPDT ON-ON (latching),SWD1,MTS-102,1,MTS-102,"TH, bushing through board void; terminals solder to SWD1V/S/G pads (F.Cu)",C1788492
+Mini-toggle SPDT ON-ON (latching),SWD2,MTS-102,1,MTS-102,"TH, bushing through board void; terminals solder to SWD2V/S/G pads (F.Cu)",C1788492
+Mini-toggle SPDT ON-ON (latching),SWD3,MTS-102,1,MTS-102,"TH, bushing through board void; terminals solder to SWD3V/S/G pads (F.Cu)",C1788492
+Mini-toggle SPDT ON-ON (latching),SWD4,MTS-102,1,MTS-102,"TH, bushing through board void; terminals solder to SWD4V/S/G pads (F.Cu)",C1788492
+Mini-toggle SPDT ON-ON (latching),SWD5,MTS-102,1,MTS-102,"TH, bushing through board void; terminals solder to SWD5V/S/G pads (F.Cu)",C1788492
+Mini-toggle SPDT ON-ON (latching),SWD6,MTS-102,1,MTS-102,"TH, bushing through board void; terminals solder to SWD6V/S/G pads (F.Cu)",C1788492
+Mini-toggle SPDT ON-ON (latching),SWD7,MTS-102,1,MTS-102,"TH, bushing through board void; terminals solder to SWD7V/S/G pads (F.Cu)",C1788492
+Mini-toggle SPDT momentary,SWC0,MTS-103-M,1,MTS-103-M,"TH, bushing through board void; terminals solder to SWC0V/C/G pads (F.Cu) | LCSC C1788493: VERIFY momentary (ON)-OFF-(ON) in datasheet; if latching-only, supply MTS-103-M yourself",C1788493
+Mini-toggle SPDT momentary,SWC1,MTS-103-M,1,MTS-103-M,"TH, bushing through board void; terminals solder to SWC1V/C/G pads (F.Cu) | LCSC C1788493: VERIFY momentary (ON)-OFF-(ON) in datasheet; if latching-only, supply MTS-103-M yourself",C1788493
+Mini-toggle SPDT momentary,SWC2,MTS-103-M,1,MTS-103-M,"TH, bushing through board void; terminals solder to SWC2V/C/G pads (F.Cu) | LCSC C1788493: VERIFY momentary (ON)-OFF-(ON) in datasheet; if latching-only, supply MTS-103-M yourself",C1788493
+Mini-toggle SPDT momentary,SWC3,MTS-103-M,1,MTS-103-M,"TH, bushing through board void; terminals solder to SWC3V/C/G pads (F.Cu) | LCSC C1788493: VERIFY momentary (ON)-OFF-(ON) in datasheet; if latching-only, supply MTS-103-M yourself",C1788493
+SWD header 1x3,J5,1x3 2.54mm,1,header 1x3,"Debug/reflash (optional). Through-hole 2.54mm header, top side. | pick any 2.54mm 1x3 TH header in the JLCPCB tool",
