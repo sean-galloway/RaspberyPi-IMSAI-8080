@@ -7051,7 +7051,7 @@
     (uuid "00000000-0000-0000-0000-000000000382")
     (property "Reference" "L1" (at 60.96 726.44 0))
     (property "Value" "2.2uH" (at 60.96 731.52 0))
-    (property "Footprint" "Inductor_SMD:L_Bourns-SRU5016_5.2x5.2mm" (at 60.96 728.98 0) (effects (font (size 1.27 1.27)) hide))
+    (property "Footprint" "L_SXNSMNR4020_4x4x2mm" (at 60.96 728.98 0) (effects (font (size 1.27 1.27)) hide))
     (pin "1" (uuid "00000000-0000-0000-0000-000000000383"))
     (pin "2" (uuid "00000000-0000-0000-0000-000000000384"))
     (instances (project "imspi8080" (path "/" (reference "L1") (unit 1))))

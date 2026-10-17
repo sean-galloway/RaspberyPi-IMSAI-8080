@@ -1,18 +1,18 @@
 Comment,Designator,Footprint,Qty,MPN / suggested part,Notes,LCSC Part #
 RP2350A,U1,QFN-60-1EP 7x7,1,RP2350A,"MCU, dual Cortex-M33 @150MHz, 520KB SRAM. Needs L1 2.2uH VREG inductor. FW: imspi8080-rp2350.uf2 (PICO_BOARD=pico2).",C42411118
-QSPI Flash 16MB,U2,SOIC-8,1,W25Q128JVSIQ,Boot flash (firmware lives here). Basic/common.,C97521
+QSPI Flash 16MB,U2,SOIC-8,1,W25Q128JVSIQ,"Boot flash (firmware lives here). Basic/common. SOIC-8 150mil (3.9x4.9mm) - matches footprint exactly; do not substitute 208mil or WSON variants.",C97521
 12MHz crystal,Y1,SMD3225-4P,1,ABM8-272-T3,"EXACT RP2350 hardware-design-guide crystal: 12MHz, 3225-4P, CL=10pF, 50ohm ESR, +-30ppm. With 15pF C23/C24.",C20625731
 TLC5947 24ch LED driver,U3,HTSSOP-32,1,TLC5947DAP,"LED drivers, daisy-chained. Extended part (1 line = both).",C1554203
 TLC5947 24ch LED driver,U4,HTSSOP-32,1,TLC5947DAP,"LED drivers, daisy-chained. Extended part (1 line = both).",C1554203
 74HC165 PISO shift reg,U5,TSSOP-16,1,SN74HC165PWR,"Switch inputs, daisy-chained.",C43420
 74HC165 PISO shift reg,U6,TSSOP-16,1,SN74HC165PWR,"Switch inputs, daisy-chained.",C43420
-microSD socket push-pull,U7,SMD push-pull,1,microSD TF push-pull,Data storage (optional). Pick a JLCPCB-library SMD socket. | LCSC C91145: VERIFY package outline vs footprint before confirming,C91145
+microSD socket push-pull,U7,SMD push-pull,1,Hirose DM3AT-SF-PEJM5,"Data storage (optional). Exact Hirose part for the on-board DM3AT footprint. C91145/TF-01A is NOT compatible (9-contact row + locating pins) - do not substitute.",C114218
 AMS1117-3.3,U8,SOT-223,1,AMS1117-3.3,3.3V logic rail from USB-C #1 VBUS. Basic.,
 AMS1117-3.3,U9,SOT-223,1,AMS1117-3.3,3.3V LED anode rail from USB-C #2 VBUS (keeps drivers cool).,
 USB-C receptacle 16P,J1,USB-C 16P SMD,1,TYPE-C-31-M-12,Power + data to the Pi. 2x CC resistors + 2x D series R.,C165948
 USB-C receptacle 16P,J2,USB-C 16P SMD,1,TYPE-C-31-M-12,Dedicated LED power only (VBUS+GND+CC). No data lines.,C165948
-Tactile button,SW1,SMD tactile 4P,1,tactile 3x4mm,"SW1=BOOTSEL, SW2=RUN/reset. | pick any in-stock 3x4mm SMD tactile in the JLCPCB tool",
-Tactile button,SW2,SMD tactile 4P,1,tactile 3x4mm,"SW1=BOOTSEL, SW2=RUN/reset. | pick any in-stock 3x4mm SMD tactile in the JLCPCB tool",
+Tactile button,SW1,SMD tactile 4P,1,C&K KMR221NGLFS,"SW1=BOOTSEL. KMR2 no-ground variant - pads match the KMR2 footprint exactly; do not substitute G-pin or generic 3x4mm parts.",C269272
+Tactile button,SW2,SMD tactile 4P,1,C&K KMR221NGLFS,"SW2=RUN/reset. KMR2 no-ground variant - pads match the KMR2 footprint exactly; do not substitute G-pin or generic 3x4mm parts.",C269272
 LED red 1206,D1,LED-1206,1,red 1206 diffused,No series resistors (TLC5947 is constant-current). Check PCBA type is not Standard-Only if you want Economic.,
 LED red 1206,D2,LED-1206,1,red 1206 diffused,No series resistors (TLC5947 is constant-current). Check PCBA type is not Standard-Only if you want Economic.,
 LED red 1206,D3,LED-1206,1,red 1206 diffused,No series resistors (TLC5947 is constant-current). Check PCBA type is not Standard-Only if you want Economic.,
@@ -94,4 +94,4 @@ Mini-toggle SPDT momentary,SWC1,MTS-103-M,1,MTS-103-M,"TH, bushing through board
 Mini-toggle SPDT momentary,SWC2,MTS-103-M,1,MTS-103-M,"TH, bushing through board void; terminals solder to SWC2V/C/G pads (F.Cu) | LCSC C1788493: VERIFY momentary (ON)-OFF-(ON) in datasheet; if latching-only, supply MTS-103-M yourself",C1788493
 Mini-toggle SPDT momentary,SWC3,MTS-103-M,1,MTS-103-M,"TH, bushing through board void; terminals solder to SWC3V/C/G pads (F.Cu) | LCSC C1788493: VERIFY momentary (ON)-OFF-(ON) in datasheet; if latching-only, supply MTS-103-M yourself",C1788493
 SWD header 1x3,J5,1x3 2.54mm,1,header 1x3,"Debug/reflash (optional). Through-hole 2.54mm header, top side. | pick any 2.54mm 1x3 TH header in the JLCPCB tool",
-2.2uH power inductor,L1,SMD 4x4mm (4040),1,SMNR4020-2.2UH,"RP2350 VREG DC-DC inductor: VREG_LX to VREG_FB (VCORE). 3.4A/3.4A, 46mOhm. Orient marking toward U1.",C135262
+2.2uH power inductor,L1,SMD 4x4x2mm,1,SMNR4020-2.2UH,"RP2350 VREG DC-DC inductor: VREG_LX to VREG_FB (VCORE). 3.4A, 46mOhm. Non-polarized - no orientation requirement. Board footprint: L_SXNSMNR4020_4x4x2mm.",C135262
