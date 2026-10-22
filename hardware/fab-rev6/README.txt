@@ -48,6 +48,17 @@ REV6.1 (2026-10-15, post-JLCPCB-review fixes, this drop)
   - Re-verified after fixes: check_opens.py = every net single copper
     island; kicad-cli drc = no electrical violations (cosmetic only).
 
+ORDERING ROUND 2 (2026-10-21, JLCPCB BOM upload): all rows auto-matched
+except two, both expected:
+  - J5: was deliberately unpinned (any 1x3 2.54mm TH header works);
+    now pinned C49257 (BOOMELE 2.54-1*3P straight, 3A).
+  - U7: C114218 is in JLCPCB's library as an Extended part and their
+    auto-matcher skipped it; fix = click Search next to U7, enter
+    "C114218" (Hirose DM3AT-SF-PEJM5), select manually. Do NOT accept
+    TF-01A/C91145 as a substitute (wrong footprint). If you'd rather
+    not pay Extended-part handling, drop U7 from the assembly and
+    hand-solder the socket (optional part; DigiKey/Mouser ~$3).
+
 CONTENTS (JLCPCB flow: upload gerbers zip at the board step; BOM + CPL
 at the assembly steps - same flow as fab-rev5, same LCSC part numbers,
 plus U1=C42411118; L1 pinned C135262 SMNR4020 4.0x4.0x2.0mm, no
@@ -59,7 +70,8 @@ in-tool substitution needed)
                                   flagged: U7=C114218 (Hirose
                                   DM3AT-SF-PEJM5), SW1/SW2=C269272
                                   (C&K KMR221NGLFS), U2=C97521,
-                                  L1=C135262, Y1=C20625731
+                                  L1=C135262, Y1=C20625731, J5=C49257
+                                  (BOOMELE 2.54-1*3P header)
   imspi8080-rev6-cpl.csv          96 placements, JLCPCB columns, mm
   imspi8080_rev6.kicad_pcb/.pro   KiCad 10 source (schematic:
   ../../imspi8080.kicad_sch = regenerated from the rev6 netlist)

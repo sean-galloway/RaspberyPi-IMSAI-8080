@@ -6,7 +6,7 @@ TLC5947 24ch LED driver,U3,HTSSOP-32,1,TLC5947DAP,"LED drivers, daisy-chained. E
 TLC5947 24ch LED driver,U4,HTSSOP-32,1,TLC5947DAP,"LED drivers, daisy-chained. Extended part (1 line = both).",C1554203
 74HC165 PISO shift reg,U5,TSSOP-16,1,SN74HC165PWR,"Switch inputs, daisy-chained.",C43420
 74HC165 PISO shift reg,U6,TSSOP-16,1,SN74HC165PWR,"Switch inputs, daisy-chained.",C43420
-microSD socket push-pull,U7,SMD push-pull,1,Hirose DM3AT-SF-PEJM5,"Data storage (optional). Exact Hirose part for the on-board DM3AT footprint. C91145/TF-01A is NOT compatible (9-contact row + locating pins) - do not substitute.",C114218
+microSD socket push-push,U7,SMD push-push,1,Hirose DM3AT-SF-PEJM5,"Data storage (optional). Exact Hirose part for the on-board DM3AT footprint (push-PUSH eject; do not confuse with push-pull). C91145/TF-01A is NOT compatible (9-contact row + locating pins) - do not substitute. In JLCPCB's library as Extended part: if auto-match misses it, Search 'C114218' and select manually.",C114218
 AMS1117-3.3,U8,SOT-223,1,AMS1117-3.3,3.3V logic rail from USB-C #1 VBUS. Basic.,
 AMS1117-3.3,U9,SOT-223,1,AMS1117-3.3,3.3V LED anode rail from USB-C #2 VBUS (keeps drivers cool).,
 USB-C receptacle 16P,J1,USB-C 16P SMD,1,TYPE-C-31-M-12,Power + data to the Pi. 2x CC resistors + 2x D series R.,C165948
@@ -93,5 +93,5 @@ Mini-toggle SPDT momentary,SWC0,MTS-103-M,1,MTS-103-M,"TH, bushing through board
 Mini-toggle SPDT momentary,SWC1,MTS-103-M,1,MTS-103-M,"TH, bushing through board void; terminals solder to SWC1V/C/G pads (F.Cu) | LCSC C1788493: VERIFY momentary (ON)-OFF-(ON) in datasheet; if latching-only, supply MTS-103-M yourself",C1788493
 Mini-toggle SPDT momentary,SWC2,MTS-103-M,1,MTS-103-M,"TH, bushing through board void; terminals solder to SWC2V/C/G pads (F.Cu) | LCSC C1788493: VERIFY momentary (ON)-OFF-(ON) in datasheet; if latching-only, supply MTS-103-M yourself",C1788493
 Mini-toggle SPDT momentary,SWC3,MTS-103-M,1,MTS-103-M,"TH, bushing through board void; terminals solder to SWC3V/C/G pads (F.Cu) | LCSC C1788493: VERIFY momentary (ON)-OFF-(ON) in datasheet; if latching-only, supply MTS-103-M yourself",C1788493
-SWD header 1x3,J5,1x3 2.54mm,1,header 1x3,"Debug/reflash (optional). Through-hole 2.54mm header, top side. | pick any 2.54mm 1x3 TH header in the JLCPCB tool",
+SWD header 1x3,J5,1x3 2.54mm,1,header 1x3,"Debug/reflash (optional). Through-hole 2.54mm header, top side. Pinned C49257 (BOOMELE 2.54-1*3P straight); any 1x3 2.54mm TH header works if you prefer to Search.",C49257
 2.2uH power inductor,L1,SMD 4x4x2mm,1,SMNR4020-2.2UH,"RP2350 VREG DC-DC inductor: VREG_LX to VREG_FB (VCORE). 3.4A, 46mOhm. Non-polarized - no orientation requirement. Board footprint: L_SXNSMNR4020_4x4x2mm.",C135262
