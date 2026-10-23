@@ -28,6 +28,12 @@ Open items for the IMSPI 8080 project.
       ~40 LEDs / 16-bit switch set). Reuse this project's architecture, SKiDL generator,
       placement/routing scripts, and firmware at the larger size.
 
+## Rev7 board fixes (from rev6 JLCPCB order, 2026-10-22)
+- [ ] **U2 footprint → SOIC-8 208mil.** Board currently has 150mil pads; every
+      128Mbit SPI NOR flash JLCPCB/LCSC stock is 208mil (C97521 W25Q128JVSIQ,
+      C2758105 GD25Q128ESIG, ...), so U2 had to be left unpopulated on the rev6
+      order (hand-soldered instead). See `hardware/fab-rev6/README.txt` round-3 note.
+
 ### Rev1 notes to carry into rev2
 - **Trim board to 204 × 60 mm (−10 mm each axis) — structural, not cosmetic.** The carrier-
   plate side flanges, front L-gussets, and rail-mount hardware all run down the side margins;

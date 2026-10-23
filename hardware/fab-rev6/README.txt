@@ -26,8 +26,13 @@ WHAT CHANGED vs rev5
     pico-sdk >= 2.0 (see firmware/README.md).
 
 VERIFY BEFORE ORDERING (RP2350 bring-up checklist)
-  - W25Q128JVSIQ on Raspberry Pi's RP2350 boot-ROM supported-flash list
-    (else pick a listed 16MB part - BOM change only).
+  - U2 FLASH PACKAGE (learned 2026-10-22): the board pads are SOIC-8
+    150mil (3.9x4.9mm). Almost all 128Mbit SPI NOR parts JLCPCB/LCSC
+    stock are 208mil (incl. C97521 "W25Q128JVSIQ" - our old pin, and
+    GD25Q128ESIG C2758105). 150mil 128Mbit parts exist but must be
+    hand-sourced (DigiKey/Mouser): e.g. Infineon S25FL128LAGMFI010,
+    ISSI IS25LP128-JBLE. Whichever you fit, check it against Raspberry
+    Pi's RP2350 boot-ROM supported-flash list.
   - CRYSTAL (resolved per the RP2350 hardware design guide): Y1 must be
     12 MHz, 3225, CL=10pF (ABM8-272-T3 class) with the 15pF C23/C24
     load caps already on the BOM. A 20pF-load crystal (rev5's part) runs
@@ -59,6 +64,22 @@ except two, both expected:
     not pay Extended-part handling, drop U7 from the assembly and
     hand-solder the socket (optional part; DigiKey/Mouser ~$3).
 
+ORDERING ROUND 3 (2026-10-22, JLCPCB pre-assembly review email):
+  - Toggles SWD0-7/SWC0-3: JLCPCB asked for a placement image (TH
+    toggles on SMD pads is unusual). Answered with
+    placement-toggles-full.png + placement-toggles-zoom.png (annotated
+    renders: circle = the 3 SMD pads SWD{n}V/S/G or SWC{n}V/C/G; the
+    rectangular edge notch below = the bushing void at the CPL x,y).
+    Toggle bushing fits the edge notch; its 3 lugs bend onto the
+    circled pads and are soldered there.
+  - U2: REAL MISMATCH, our BOM error (carried since rev5): C97521 is
+    SOIC-8 208mil (JLCPCB part page + Winbond datasheet), board pads
+    are 150mil - the leads cannot land. Chose option B: U2 left
+    unpopulated, refunded; flash hand-soldered later (BOOTSEL UF2
+    drag-and-drop programming still works with an empty/missing
+    flash). rev7 fix: change U2 footprint to SOIC-8 208mil (de-facto
+    standard for 128Mbit NOR) - see TODO.md.
+
 CONTENTS (JLCPCB flow: upload gerbers zip at the board step; BOM + CPL
 at the assembly steps - same flow as fab-rev5, same LCSC part numbers,
 plus U1=C42411118; L1 pinned C135262 SMNR4020 4.0x4.0x2.0mm, no
@@ -69,9 +90,15 @@ in-tool substitution needed)
                                   parts pinned for the parts JLCPCB
                                   flagged: U7=C114218 (Hirose
                                   DM3AT-SF-PEJM5), SW1/SW2=C269272
-                                  (C&K KMR221NGLFS), U2=C97521,
-                                  L1=C135262, Y1=C20625731, J5=C49257
-                                  (BOOMELE 2.54-1*3P header)
+                                  (C&K KMR221NGLFS), L1=C135262,
+                                  Y1=C20625731, J5=C49257 (BOOMELE
+                                  2.54-1*3P header). U2 LCSC cell left
+                                  BLANK on purpose (see round-3 note
+                                  above - no 150mil 128Mbit flash in
+                                  JLCPCB's library).
+  placement-toggles-full.png      annotated top render: 12 toggle
+  placement-toggles-zoom.png      positions (circles=pads, notch=bushing
+                                  void); sent to JLCPCB 2026-10-22
   imspi8080-rev6-cpl.csv          96 placements, JLCPCB columns, mm
   imspi8080_rev6.kicad_pcb/.pro   KiCad 10 source (schematic:
   ../../imspi8080.kicad_sch = regenerated from the rev6 netlist)

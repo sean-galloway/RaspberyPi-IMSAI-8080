@@ -1,6 +1,6 @@
 Comment,Designator,Footprint,Qty,MPN / suggested part,Notes,LCSC Part #
 RP2350A,U1,QFN-60-1EP 7x7,1,RP2350A,"MCU, dual Cortex-M33 @150MHz, 520KB SRAM. Needs L1 2.2uH VREG inductor. FW: imspi8080-rp2350.uf2 (PICO_BOARD=pico2).",C42411118
-QSPI Flash 16MB,U2,SOIC-8,1,W25Q128JVSIQ,"Boot flash (firmware lives here). Basic/common. SOIC-8 150mil (3.9x4.9mm) - matches footprint exactly; do not substitute 208mil or WSON variants.",C97521
+QSPI Flash 16MB,U2,SOIC-8 150mil,1,150mil 8-SOIC 128Mbit SPI NOR,"Boot flash (firmware lives here). BOARD PADS ARE SOIC-8 150mil (3.9x4.9mm). LCSC C97521 is 208mil - does NOT fit (JLCPCB flagged 2026-10-22). Hand-solder a 150mil part, e.g., Infineon S25FL128LAGMFI010 or ISSI IS25LP128-JBLE (DigiKey/Mouser ~$3-5; verify vs RP2350 boot-ROM supported-flash list). rev7: change footprint to 208mil.",
 12MHz crystal,Y1,SMD3225-4P,1,ABM8-272-T3,"EXACT RP2350 hardware-design-guide crystal: 12MHz, 3225-4P, CL=10pF, 50ohm ESR, +-30ppm. With 15pF C23/C24.",C20625731
 TLC5947 24ch LED driver,U3,HTSSOP-32,1,TLC5947DAP,"LED drivers, daisy-chained. Extended part (1 line = both).",C1554203
 TLC5947 24ch LED driver,U4,HTSSOP-32,1,TLC5947DAP,"LED drivers, daisy-chained. Extended part (1 line = both).",C1554203
