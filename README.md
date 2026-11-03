@@ -53,7 +53,7 @@ firmware/    RP2040 firmware (Pico SDK, C)
 host/        Python driver + examples for the Pi side
 hardware/    KiCad PCB (rev5) + fab packages + placement/routing scripts
 hardware/case/      canonical 3D rack case: rack_case.scad (fascia + tray + side
-                    gussets + blue frame), STLs, paddle caps — single source of
+                    gussets fused into one print + blue frame), STLs, paddle caps — single source of
                     truth for all panel/case mechanical CAD
 hardware/faceplate/ standalone 4 mm faceplate variant + fascia hole-map fab docs
 ```

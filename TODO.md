@@ -7,7 +7,7 @@ Open items for the IMSPI 8080 project.
       **jetson-marker-turret** git history (`f57c7c1^` — it had been stripped from the
       working tree in the move to this repo). Now lives at
       [`hardware/case/rack_case.scad`](hardware/case/rack_case.scad) (fascia + tray +
-      side gussets + blue frame).
+      side gussets (fused into the case, one print) + blue frame).
 - [x] Reconciled against the **measured rev5 PCB** (`imspi8080_rev5.kicad_pcb`,
       204.1 × 112.1): LED windows, 12 toggle holes, and all 6 PCB bosses re-aligned to
       the rev5 grid; gusset webs lowered (board bottom z≈19.3). See
@@ -15,8 +15,10 @@ Open items for the IMSPI 8080 project.
 - [x] LED windows + standoff layout finalized from the measured grid. The rev2-era
       **separate toggle bracket (J3/J4)** is obsolete — rev5 switches mount through the
       board voids (see `hardware/imspi8080_rev5.kicad_pcb` + fab-rev5 notes).
-      **Remaining in-hand check:** LED dome depth vs `pcb_boss_h=5` and MTS bushing
-      length vs `tog_cbore_dep=2.5` before printing (can't fix after print).
+      **Remaining in-hand check:** LED dome depth vs `pcb_boss_h=5`; MTS body vs the
+      13.6 x 8.4 fascia pocket, bushing vs the 2.5 mm web, and bat throw up/down with
+      the body long side horizontal -- before printing (can't fix after print).
+      Toggles mount to the fascia (nut on the front) and jumper to the pads.
 
 ## Rev1 bring-up (when the board arrives, ~mid/late July 2026)
 - [ ] Flash firmware: hold **BOOTSEL (SW1)**, plug USB into J1, drag the `.uf2` (build from

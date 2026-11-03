@@ -1,6 +1,6 @@
 // =====================================================================
 // IMSAI-8080 (IMSPI 8080) rev5 — 10" rack 3U compute-bay case
-//   front fascia (bezel) + tray (platform) + bolt-on side gussets
+//   front fascia (bezel) + tray (platform) + side gussets, ONE fused print
 //   + centre gusset + Jetson AGX Orin pocket + Pi 5 / Pico standoffs
 //   + cosmetic IMSAI-blue frame trim.
 // For the DeskPi RackMate T2 (10" rack). 3D-printable (PETG/ASA recommended).
@@ -21,7 +21,7 @@
 //                 hardware/faceplate/gen_faceplate_3d.py); board bottom z~19.3
 //                 leaves ~15 mm under it for the gusset webs (was ~34 mm).
 // Tray / Jetson pocket / Pi 5 / Pico / blue frame are board-independent and
-// unchanged from the printed rev2-era case.
+// unchanged from the rev2-era case design (nothing has been printed yet).
 //
 // SAFETY (per turret CLAUDE.md): this panel is a SOFT USB peripheral to the Pi.
 // It is STATUS + soft-control ONLY. The hardware arming switch, E-stop, and the
@@ -29,8 +29,7 @@
 // through this board. Panel switches may *request* actions; they never fire.
 //
 // Render/export: open in OpenSCAD, F6, then export STL. CLI:
-//   openscad -o case.stl  -D 'PART="case"'  rack_case.scad
-//   openscad -o gusset.stl -D 'PART="gusset"' rack_case.scad   (print x2)
+//   openscad -o case.stl  -D 'PART="case"'  rack_case.scad    (fascia+gussets+tray)
 //   openscad -o frame.stl -D 'PART="frame"' rack_case.scad     (IMSAI blue)
 // =====================================================================
 
@@ -70,10 +69,14 @@ gusset_h_ctr   = 12.5;    // centre-brace height: top z~15.5, clears the board b
 cable_slot_w   = 12;      // centre-gusset cable pass-through (y) for switch/board wiring
 cable_slot_h   = 6;       // ... (z), slot spans z 7..13 inside the brace
 
-// ---- Bolt-on SIDE gusset (separate part) ---------------------------------------
+// ---- SIDE gussets ----------------------------------------------------------------
 // Reuses the PCB's LOWER corner mount hole (H4 left / H6 right): the gusset CARRIES
 // that standoff and the board screws into it FROM THE BACK — no new fascia hole, no
-// screw near the front. Also bolted to the tray floor. Path: fascia->PCB->gusset->tray.
+// screw near the front. Path: fascia->PCB->gusset->tray.
+// gusset_fused = true (default): the gussets are FUSED into the case (fascia + gussets
+// + tray as one print, for strength; no floor bolts). false: the older bolt-on variant
+// (separate PART="gusset", M3 through the floor).
+gusset_fused   = true;
 bg_web_t       = 4;       // web thickness (x)
 bg_web_depth   = 50;      // web reach back along the tray (y)
 bg_web_top     = 16;      // web top z (below the rev5 PCB bottom edge z~19.3)
@@ -119,11 +122,11 @@ pico_screw_d   = 2.2;     // M2 clearance
 // masthead legend recesses over the board's top dead zone (same proven layout
 // as hardware/faceplate/gen_faceplate_3d.py).
 bezel_th       = 5;       // face thickness (rigid, backs the LED windows). The
-                          // toggle holes are back-counterbored (below) so the
+                          // toggle holes are back-pocketed (below) so the
                           // ~6 mm MTS-1xx bushing still protrudes far enough to nut.
 aperture_w     = 214;     // clear aperture width (10" rack spec)
 content_dx     = -3;      // shift the whole content (LEDs+toggles+bosses) left —
-                          // same convention as the printed rev2-era case.
+                          // same convention as the rev2-era case design.
 
 // LED windows: one diffuser-backed slot per lamp row. {x0, x1, y_center} in
 // board-rel coords (measured: LED cols 14.13+15k / 147.13+15k, rows 64.13/76.13/88.13).
@@ -134,17 +137,22 @@ led_windows    = [ [10.5, 123, 64.13],   // row 1 — addr-hi  -> subsystem hear
                    [143.5, 196.5, 76.13] ]; // status (4)    -> ARMED/TRACKING/FAULT/PWR
 
 // Toggle cutouts: 8 data (left block) + 4 command (status block), 15 mm pitch.
-// Centers = the 13.6 mm-wide board voids measured in Edge.Cuts (y=103.06); the
-// switch bodies pass through bezel hole + board void, terminals solder to the
-// SWD/SWC pads 10 mm above. [PANEL] set toggle_d to the bushing dia of the
+// Centers = the 13.6 mm-wide board voids measured in Edge.Cuts (y=103.06).
+// The SWITCHES MOUNT TO THE FASCIA, not the board: the body floats in the
+// board void, so the fascia alone locates and clamps it (bushing through the
+// hole, nut on the front) and the lugs are jumper-wired to the SWD/SWC pads.
+// The body's front end nests in a rectangular back pocket, which keys it
+// against rotation, squares it to the board void, and thins the clamp web so
+// the nut has thread to bite. [PANEL] set toggle_d to the bushing dia of the
 // toggles you buy.
 toggle_d       = 6.5;     // MTS bushing ~6 mm (1/4-40) -> 6.5 hole (same for both)
 toggle_ry      = 103.06;  // board-rel y of the void row center
 toggle_x_data  = [14.06, 29.06, 44.06, 59.06, 74.06, 89.06, 104.06, 119.06];
 toggle_x_cmd   = [147.06, 162.06, 177.06, 192.06];
-tog_cbore_d    = 9;       // back-side counterbore dia (clears the switch shoulder)
-tog_cbore_dep  = 2.5;     // leaves bezel_th - this = 2.5 mm at the thread so the nut
-                          // catches on a ~6 mm bushing regardless of its exact length
+tog_body_w     = 13.6;    // back pocket for the switch body (MTS-1xx ~13 x 8),
+tog_body_h     = 8.4;     //   long side horizontal, the same way the board void runs
+tog_cbore_dep  = 2.5;     // pocket depth: leaves bezel_th - this = 2.5 mm clamp web,
+                          // so the nut catches on a ~6 mm bushing
 
 // Panel-PCB standoff bosses (all 6, measured H1..H6 on rev5), 5 mm off the bezel back.
 pcb_boss_h     = 5;
@@ -233,7 +241,7 @@ module tray() {
             translate([cx, shelf_depth-3-eps, rear_lip_h-6])
                 cube([18, 4+2*eps, 8]);
         // through-holes for the bolt-on side-gusset feet (M3, nut under the tray)
-        for (b = concat(bg_bolt_l, bg_bolt_r))
+        if (!gusset_fused) for (b = concat(bg_bolt_l, bg_bolt_r))
             translate([b[0], b[1], -eps]) cylinder(h = floor_th + 2*eps, d = bg_bolt_d);
     }
 }
@@ -282,7 +290,7 @@ module oval_slot() {
                 cylinder(h = bezel_th + 2*eps, d = slot_h);
 }
 
-// through-face features (LED windows + toggle holes/counterbores)
+// through-face features (LED windows + toggle holes/body pockets)
 module _face_cuts() {
     for (w = led_windows)
         translate([ap_x(w[0]), -eps, bd_z(w[2]) - led_win_h/2])
@@ -290,8 +298,9 @@ module _face_cuts() {
     for (xd = concat(toggle_x_data, toggle_x_cmd)) {
         translate([ap_x(xd), -eps, toggle_z_ctr])
             rotate([-90, 0, 0]) cylinder(h = bezel_th + 2*eps, d = toggle_d);
-        translate([ap_x(xd), bezel_th - tog_cbore_dep, toggle_z_ctr])
-            rotate([-90, 0, 0]) cylinder(h = tog_cbore_dep + eps, d = tog_cbore_d);
+        translate([ap_x(xd) - tog_body_w/2, bezel_th - tog_cbore_dep,
+                   toggle_z_ctr - tog_body_h/2])
+            cube([tog_body_w, tog_cbore_dep + eps, tog_body_h]);
     }
 }
 
@@ -375,8 +384,8 @@ module blue_frame() {
 module panel_pcb_bosses() {
     fx = (usable_width - face_width) / 2;
     for (h = pcb_holes)
-        // H4 (8.1,87.1) and H6 (196.1,87.1) are carried by the bolt-on side
-        // gussets instead (their standoffs are part of the gusset part)
+        // H4 (8.1,87.1) and H6 (196.1,87.1) are carried by the side gussets
+        // instead (their standoffs are part of the gusset)
         if (!(abs(h[1] - 87.1) < 0.2 && (abs(h[0] - 8.1) < 0.2 || abs(h[0] - 196.1) < 0.2)))
             translate([fx + ap_x(h[0]), 0, bd_z(h[1])])
                 rotate([-90, 0, 0])      // grow into the bay from the bezel back (y=0)
@@ -392,7 +401,7 @@ module gusset(x0, h) {
                 polygon([[0, 0], [gusset_d, 0], [0, h]]);
 }
 
-// BOLT-ON side gusset (SEPARATE part, one per side). Built per-side because the
+// Side gusset (one per side; fused into the case unless !gusset_fused). Built per-side because the
 // rev5 corner-hole surroundings are asymmetric. Each = flange plate on the fascia
 // back that carries the PCB corner standoff (board screws into it from behind) +
 // a diagonal web below the PCB + a flat foot bolted through the tray floor.
@@ -404,6 +413,7 @@ module gusset(x0, h) {
 //   notch= [z0, h] switch-body clearance notch in the flange, or [] for none
 module bolt_gusset_side(ex, sgn, bx, bolts, notch) {
     bz  = bd_z(87.1);                        // corner-hole height (H4/H6) z~44.3
+    ov  = gusset_fused ? 0.5 : 0;            // fused: sink flange/foot into fascia/floor
     fw  = abs(bx - ex) - 0.4;                // flange ends 0.4 mm shy of the boss
     fx0 = min(ex, ex + sgn*fw);              // flange x-start
     difference() {
@@ -413,13 +423,13 @@ module bolt_gusset_side(ex, sgn, bx, bolts, notch) {
                 rotate([90, 0, 90]) linear_extrude(bg_web_t)
                     polygon([[0,0], [bg_web_depth,0], [0, bg_web_top - (floor_th-1)]]);
             // flange plate on the fascia back (in front of the board), edge -> boss
-            translate([fx0, 0, floor_th]) cube([fw, bg_flange_t, (bz + 5) - floor_th]);
+            translate([fx0, -ov, floor_th - ov]) cube([fw, bg_flange_t + ov, (bz + 5) - floor_th + ov]);
             // PCB corner standoff the board screws into from the back
             translate([bx, 0, bz]) rotate([-90, 0, 0])
                 standoff(pcb_boss_h, pcb_boss_d, pcb_screw_d);
             // flat foot bolted to the floor
-            translate([min(ex, ex + sgn*bg_foot_w), 0, floor_th])
-                cube([bg_foot_w, bg_foot_d, bg_foot_t]);
+            translate([min(ex, ex + sgn*bg_foot_w), 0, floor_th - ov])
+                cube([bg_foot_w, bg_foot_d, bg_foot_t + ov]);
         }
         // switch-body clearance notch (spans the whole flange in x)
         if (len(notch) > 0) {
@@ -428,7 +438,7 @@ module bolt_gusset_side(ex, sgn, bx, bolts, notch) {
             translate([n0, -1, notch[0]]) cube([n1 - n0, bg_flange_t + 2, notch[1]]);
         }
         // floor bolt clearances
-        for (b = bolts)
+        if (!gusset_fused) for (b = bolts)
             translate([b[0], b[1], floor_th - eps]) cylinder(h = bg_foot_t + 2*eps, d = bg_bolt_d);
     }
 }
@@ -457,18 +467,20 @@ module rack_case() {           // functional print (black PETG/ASA)
                           // lives on the turret. Keep only for a spare/bench Pico.
     imsai_face();
     panel_pcb_bosses();
-    // integral centre gusset in the true LED-block gap (rel ctr 133.25); side gussets bolt on
+    // integral centre gusset in the true LED-block gap (rel ctr 133.25)
     centre_gusset(ap_x(133.25) + (usable_width - face_width)/2 - gusset_t/2);
+    if (gusset_fused) bolt_gusset();   // side gussets fused in (one-piece print)
 }
 
 // PART selector — each printable part on its own:
-//   "case" (tray+fascia, black)  "frame" (blue trim)  "gusset" (2 side gussets)  "all"
+//   "case" (tray+fascia+side gussets, black)  "frame" (blue trim)  "all"
+//   "gusset" (both side gussets, ONE file) only when gusset_fused = false
 if (PART == "frame")       blue_frame();
-else if (PART == "gusset") bolt_gusset();
+else if (PART == "gusset") { assert(!gusset_fused, "gussets are fused into PART=case"); bolt_gusset(); }
 else if (PART == "all") {
     if (PREVIEW) { color("Gainsboro") rack_case(); color("DodgerBlue") blue_frame();
-                   color("Tomato") bolt_gusset(); }
-    else         { rack_case(); blue_frame(); bolt_gusset(); }
+                   if (!gusset_fused) color("Tomato") bolt_gusset(); }
+    else         { rack_case(); blue_frame(); if (!gusset_fused) bolt_gusset(); }
 }
 else {
     if (PREVIEW) color("Gainsboro") rack_case();
